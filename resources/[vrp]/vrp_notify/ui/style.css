@@ -1,0 +1,79 @@
+html {
+	overflow-x: hidden !important;
+	overflow-y: hidden !important;
+	background-color: transparent !important;
+}
+
+body {
+	background-color: transparent !important;
+}
+
+#notifications {
+	top: 3%;
+	left: 63%;
+	color: rgba(255,255,255,0.7);
+	max-width: 550px;
+	font-size: 12px;
+	position: absolute !important;
+	font-family: Arial,Helvetica,sans-serif;
+}
+
+#notifications b {
+	color: rgba(255,255,255,1);
+}
+
+#sucesso {
+	background-image: url("1.png");
+	background-repeat: no-repeat;
+	background-position: 10px 6px;
+	float: left;
+	padding: 7px 10px 7px 30px;
+	border-radius: 4px;
+ 	margin: 0 0 10px 10px;
+	background-color: #254500;
+}
+
+#negado {
+	background-image: url("2.png");
+	background-repeat: no-repeat;
+	background-position: 10px 6px;
+	float: left;
+	padding: 7px 10px 7px 30px;
+	border-radius: 4px;
+ 	margin: 0 0 10px 10px;
+	background-color: #690808;
+}
+
+#aviso {
+	background-image: url("3.png");
+	background-repeat: no-repeat;
+	background-position: 10px 6px;
+	float: left;
+	padding: 7px 10px 7px 31px;
+	border-radius: 4px;
+ 	margin: 0 0 10px 10px;
+	background-color: #7d6400;
+}
+
+#importante {
+	background-image: url("4.png");
+	background-repeat: no-repeat;
+	background-position: 10px 6px;
+	float: left;
+	padding: 7px 10px 7px 32px;
+	border-radius: 4px;
+ 	margin: 0 0 10px 10px;
+	background-color: #004270;
+}
+
+#evento {
+	background-image: url("4.png");
+	background-repeat: no-repeat;
+	background-position: 10px 6px;
+	float: left;
+	padding: 7px 10px 7px 32px;
+	border-radius: 4px;
+	margin: 0 0 10px 10px;
+	background-color: rgba(50,30,90,0.9);
+	
+}

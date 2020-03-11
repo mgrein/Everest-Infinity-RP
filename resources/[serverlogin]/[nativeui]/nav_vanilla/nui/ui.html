@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+		<link href="ui.css" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+		<div id="actionmenu">
+			<div id="mainmenu">
+				<button class="menuoption" data-sub="vanilla-comprar">Comprar</button>
+				<button class="menuoption" data-sub="vanilla-vender">Vender</button>
+				<button class="menuoption" data-action="fechar">Fechar</button>
+			</div>
+
+			<div data-parent="mainmenu" id="vanilla-comprar" style="display: none;">
+				<button class="menuoption" data-action="vanilla-comprar-algemas"><l>Algemas</l><r>$200</r></button>
+				<button class="menuoption" data-action="vanilla-comprar-capuz"><l>Capuz</l><r>$200</r></button>	
+			</div>
+			<div data-parent="mainmenu" id="vanilla-vender" style="display: none;">
+				<button class="menuoption" data-action="vanilla-vender-algemas"><l>Algemas</l><r>$100</r></button>
+				<button class="menuoption" data-action="vanilla-vender-capuz"><l>Capuz</l><r>$100</r></button>
+				
+			</div>
+		</div>
+		<script src="ui.js" type="text/javascript"></script>
+	</body>
+</html>

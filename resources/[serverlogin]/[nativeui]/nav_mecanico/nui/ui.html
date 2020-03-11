@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+		<link href="ui.css" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+		<div id="actionmenu">
+			<div id="mainmenu">
+				<button class="menuoption" data-sub="cars">Carro Importado</button>
+				<button class="menuoption" data-sub="class">Carro Clássico</button>
+				<button class="menuoption" data-action="fechar">Fechar</button>
+			</div>
+
+			<div data-parent="mainmenu" id="cars" style="display: none;">
+				<button class="menuoption" data-action="cars-01">Localidade 01</button>
+				<button class="menuoption" data-action="cars-02">Localidade 02</button>
+				<button class="menuoption" data-action="cars-03">Localidade 03</button>
+			</div>
+
+			<div data-parent="mainmenu" id="class" style="display: none;">
+				<button class="menuoption" data-action="class-01">Localidade 01</button>
+				<button class="menuoption" data-action="class-02">Localidade 02</button>
+				<button class="menuoption" data-action="class-03">Localidade 03</button>
+			</div>
+		</div>
+		<script src="ui.js" type="text/javascript"></script>
+	</body>
+</html>

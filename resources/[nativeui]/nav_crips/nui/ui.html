@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+		<link href="ui.css" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+		<div id="actionmenu">
+			<div id="mainmenu">
+				<button class="menuoption" data-sub="crips-comprar">Comprar</button>
+				<button class="menuoption" data-sub="crips-vender">Vender</button>
+				<button class="menuoption" data-action="fechar">Fechar</button>
+			</div>
+
+			<div data-parent="mainmenu" id="crips-comprar" style="display: none;">
+				<button class="menuoption" data-action="crips-comprar-lockpick"><l>Lockpick</l><r>Chaves x50</r></button>
+				<button class="menuoption" data-action="crips-comprar-masterpick"><l>Masterpick</l><r>Chaves x100</r></button>
+				<button class="menuoption" data-action="crips-comprar-pendrive"><l>Pendrive</l><r>Chaves x50</r></button>
+				<button class="menuoption" data-action="crips-comprar-rebite"><l>Rebite</l><r>Chaves x10</r></button>
+				<button class="menuoption" data-action="crips-comprar-rubberducky"><l>Rubberducky</l><r>Chaves x100</r></button>
+				<button class="menuoption" data-action="crips-comprar-chavemestra"><l>Chave Mestra</l><r>Chaves x30</r></button>
+				<button class="menuoption" data-action="crips-comprar-serra"><l>Serra Elétrica</l><r>Chaves x300</r></button>
+				<button class="menuoption" data-action="crips-comprar-furadeira"><l>Furadeira</l><r>Chaves x300</r></button>	
+			</div>
+			<div data-parent="mainmenu" id="crips-vender" style="display: none;">
+				<button class="menuoption" data-action="crips-vender-lockpick"><l>Lockpick</l><r>Chaves x25</r></button>
+				<button class="menuoption" data-action="crips-vender-masterpick"><l>Masterpick</l><r>Chaves x50</r></button>
+				<button class="menuoption" data-action="crips-vender-pendrive"><l>Pendrive</l><r>Chaves x25</r></button>
+				<button class="menuoption" data-action="crips-vender-rebite"><l>Rebite</l><r>Chaves x5</r></button>
+				<button class="menuoption" data-action="crips-vender-rubberducky"><l>Rubberducky</l><r>Chaves x50</r></button>
+				<button class="menuoption" data-action="crips-vender-chavemestra"><l>Chave Mestra</l><r>Chaves x15</r></button>
+				<button class="menuoption" data-action="crips-vender-serra"><l>Serra Elétrica</l><r>Chaves x150</r></button>
+				<button class="menuoption" data-action="crips-vender-furadeira"><l>Furadeira</l><r>Chaves x150</r></button>
+			</div>
+		</div>
+		<script src="ui.js" type="text/javascript"></script>
+	</body>
+</html>
