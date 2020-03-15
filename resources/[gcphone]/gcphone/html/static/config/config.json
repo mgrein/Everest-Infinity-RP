@@ -33,25 +33,28 @@
         }]
     },
 
-    "background": {
-        "Everest": "background.jpg",
+	"background": {
+        "Everest": "background.png",
+        "Everest01": "background01.png",
         "Custom URL": "URL"
-    },
-    "background_default": {
+      },
+      "background_default": {
         "label": "Everest",
-        "value": "background.jpg"
-    },
-
-
-    "coque": {
+        "value": "background01.png"
+      },
+    
+    
+      "coque": {
         "Sansumg S8": "s8.png",
         "Iphone X": "iphonex.png",
-        "Brick Base": "base.png"
-    },
-    "coque_default": {
+        "Brick Base": "base.png",
+        "Iphone 5": "background.png"
+  
+      },
+      "coque_default": {
         "label": "Sansumg S8",
-        "value": "s8.png"
-    },
+        "value": "background.png"
+      },
 
 
     "serviceCall": [{

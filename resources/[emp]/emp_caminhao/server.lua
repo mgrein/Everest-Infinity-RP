@@ -16,45 +16,45 @@ local diesel = 1
 -----------------------------------------------------------------------------------------------------------------------------------------
 local paylist = {
 	["diesel"] = {
-		[1] = { pay = math.random(500, 1200) },
-		[2] = { pay = math.random(500, 1200) },
-		[3] = { pay = math.random(500, 1200) },
-		[4] = { pay = math.random(500, 1200) },
-		[5] = { pay = math.random(500, 1200) },
-		[6] = { pay = math.random(500, 1200) }
+		[1] = { pay = math.random(500, 1500) },
+		[2] = { pay = math.random(500, 1500) },
+		[3] = { pay = math.random(500, 1500) },
+		[4] = { pay = math.random(500, 1500) },
+		[5] = { pay = math.random(500, 1500) },
+		[6] = { pay = math.random(500, 1500) }
 	},
 	["gas"] = {
-		[1] = { pay = math.random(500, 1200) },
-		[2] = { pay = math.random(500, 1200) },
-		[3] = { pay = math.random(500, 1200) },
-		[4] = { pay = math.random(500, 1200) },
-		[5] = { pay = math.random(500, 1200) },
-		[6] = { pay = math.random(500, 1200) },
-		[7] = { pay = math.random(500, 1200) },
-		[8] = { pay = math.random(500, 1200) },
-		[9] = { pay = math.random(500, 1200) },
-		[10] = { pay = math.random(500, 1200) },
-		[11] = { pay = math.random(500, 1200) },
-		[12] = { pay = math.random(500, 1200) }
+		[1] = { pay = math.random(500, 1500) },
+		[2] = { pay = math.random(500, 1500) },
+		[3] = { pay = math.random(500, 1500) },
+		[4] = { pay = math.random(500, 1500) },
+		[5] = { pay = math.random(500, 1500) },
+		[6] = { pay = math.random(500, 1500) },
+		[7] = { pay = math.random(500, 1500) },
+		[8] = { pay = math.random(500, 1500) },
+		[9] = { pay = math.random(500, 1500) },
+		[10] = { pay = math.random(500, 1500) },
+		[11] = { pay = math.random(500, 1500) },
+		[12] = { pay = math.random(500, 1500) }
 	},
 	["cars"] = {
-		[1] = { pay = math.random(500, 1200) },
-		[2] = { pay = math.random(500, 1200) },
-		[3] = { pay = math.random(500, 1200) },
-		[4] = { pay = math.random(500, 1200) },
-		[5] = { pay = math.random(500, 1200) }
+		[1] = { pay = math.random(500, 1500) },
+		[2] = { pay = math.random(500, 1500) },
+		[3] = { pay = math.random(500, 1500) },
+		[4] = { pay = math.random(500, 1500) },
+		[5] = { pay = math.random(500, 1500) }
 	},
 	["woods"] = {
-		[1] = { pay = math.random(500, 1200) },
-		[2] = { pay = math.random(500, 1200) },
-		[3] = { pay = math.random(500, 1200) },
-		[4] = { pay = math.random(500, 1200) }
+		[1] = { pay = math.random(500, 1500) },
+		[2] = { pay = math.random(500, 1500) },
+		[3] = { pay = math.random(500, 1500) },
+		[4] = { pay = math.random(500, 1500) }
 	},
 	["show"] = {
-		[1] = { pay = math.random(900,1500) },
-		[2] = { pay = math.random(500, 1200) },
-		[3] = { pay = math.random(500, 1200) },
-		[4] = { pay = math.random(500, 1200) }
+		[1] = { pay = math.random(900,2000) },
+		[2] = { pay = math.random(500, 1500) },
+		[3] = { pay = math.random(500, 1500) },
+		[4] = { pay = math.random(500, 1500) }
 	}
 }
 -----------------------------------------------------------------------------------------------------------------------------------------

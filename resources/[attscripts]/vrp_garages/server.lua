@@ -428,7 +428,7 @@ local garages = {
 	[611] = { ['name'] = "Fotos", ['payment'] = false, ['perm'] = "admin.permissao" },
 
 	[612] = { ['name'] = "Garagem", ['payment'] = true, ['perm'] = "ballas.permissao" },
-	[613] = { ['name'] = "Garagem", ['payment'] = true, ['perm'] = "groove.permissao" },
+	[613] = { ['name'] = "Garagem", ['payment'] = false, ['perm'] = "groove.permissao" },
 	[614] = { ['name'] = "Garagem", ['payment'] = true, ['perm'] = "vagos.permissao" },
 	[615] = { ['name'] = "Garagem", ['payment'] = true, ['perm'] = "mafia.permissao" },
 	[616] = { ['name'] = "Garagem", ['payment'] = false, ['perm'] = "bahamas.permissao" },
@@ -458,6 +458,9 @@ local garages = {
 	[639] = { ['name'] = "Garagem", ['payment'] = true, ['public'] = true },
 	[640] = { ['name'] = "Garagem", ['payment'] = true, ['public'] = true },
 	[641] = { ['name'] = "Garagem", ['payment'] = false, ['perm'] = "liberty.permissao" },
+	[642] = { ['name'] = "Garagem", ['payment'] = false, ['perm'] = "weazelnews.permissao" },
+	[643] = { ['name'] = "Weazelnews", ['payment'] = false, ['perm'] = "weazelnews.permissao" },
+	[644] = { ['name'] = "WeazelHeli", ['payment'] = false, ['perm'] = "weazelnews.permissao" },
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- GARAGEMS
@@ -899,62 +902,6 @@ AddEventHandler("secondaryColors",function(r,g,b,r2,g2,b2)
 	local source = source
 	local user_id = vRP.getUserId(source)
 	if vRP.hasPermission(user_id,"bennys.permissao") or vRP.hasPermission(user_id,"liberty.permissao") and vRPclient.isInVehicle(source) then
-		local vehicle,vnetid,placa,vname = vRPclient.vehList(source,7)
-		if vehicle then
-			local puser_id = vRP.getUserByRegistration(placa)
-			if puser_id then
-				vCLIENT.vehicleSecondary(source,vehicle,parseInt(r),parseInt(g),parseInt(b))
-				local ok = vRP.request(source,"Deseja aplicar a cor selecionada no veículo?",30)
-				if ok then
-					if vRP.tryFullPayment(user_id,3000) then
-						TriggerClientEvent("Notify",source,"sucesso","Aplicada com sucesso.",8000)
-						vRP.execute("creative/set_secColor",{ user_id = puser_id, vehicle = vname, color2R = parseInt(r), color2G = parseInt(g), color2B = parseInt(b) })
-					else
-						vCLIENT.vehiclePrimary(source,vehicle,parseInt(r2),parseInt(g2),parseInt(b2))
-					end
-				else
-					vCLIENT.vehicleSecondary(source,vehicle,parseInt(r2),parseInt(g2),parseInt(b2))
-				end
-			end
-		end
-	end
-end)
------------------------------------------------------------------------------------------------------------------------------------------
--- PRIMARYCOLORS
------------------------------------------------------------------------------------------------------------------------------------------
-RegisterServerEvent("primaryColors2")
-AddEventHandler("primaryColors",function(r,g,b,r2,g2,b2)
-	local source = source
-	local user_id = vRP.getUserId(source)
-	if vRP.hasPermission(user_id,"admin.permissao") and vRPclient.isInVehicle(source) then
-		local vehicle,vnetid,placa,vname = vRPclient.vehList(source,7)
-		if vehicle then
-			local puser_id = vRP.getUserByRegistration(placa)
-			if puser_id then
-				vCLIENT.vehiclePrimary(source,vehicle,parseInt(r),parseInt(g),parseInt(b))
-				local ok = vRP.request(source,"Deseja aplicar a cor selecionada no veículo?",30)
-				if ok then
-					if vRP.tryFullPayment(user_id,3000) then
-						TriggerClientEvent("Notify",source,"sucesso","Aplicada com sucesso.",8000)
-						vRP.execute("creative/set_priColor",{ user_id = puser_id, vehicle = vname, colorR = parseInt(r), colorG = parseInt(g), colorB = parseInt(b) })
-					else
-						vCLIENT.vehiclePrimary(source,vehicle,parseInt(r2),parseInt(g2),parseInt(b2))
-					end
-				else
-					vCLIENT.vehiclePrimary(source,vehicle,parseInt(r2),parseInt(g2),parseInt(b2))
-				end
-			end
-		end
-	end
-end)
------------------------------------------------------------------------------------------------------------------------------------------
--- PRIMARYCOLORS
------------------------------------------------------------------------------------------------------------------------------------------
-RegisterServerEvent("secondaryColors2")
-AddEventHandler("secondaryColors",function(r,g,b,r2,g2,b2)
-	local source = source
-	local user_id = vRP.getUserId(source)
-	if vRP.hasPermission(user_id,"admin.permissao") and vRPclient.isInVehicle(source) then
 		local vehicle,vnetid,placa,vname = vRPclient.vehList(source,7)
 		if vehicle then
 			local puser_id = vRP.getUserByRegistration(placa)

@@ -11,15 +11,18 @@ files {
 
 	'html/static/config/config.json',
 	
+
 	-- Coque
 	'html/static/img/coque/s8.png',
 	'html/static/img/coque/iphonex.png',
 	'html/static/img/coque/base.png',
 	'html/static/img/coque/transparent.png',
+	'html/static/img/coque/background.png',
 	
 	-- Background
 	'html/static/img/background/background.jpg',
-	
+	'html/static/img/background/background01.png',
+
 	'html/static/img/icons_app/call.png',
 	'html/static/img/icons_app/contacts.png',
 	'html/static/img/icons_app/sms.png',

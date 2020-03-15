@@ -75,7 +75,7 @@ function vRPN.storeItem(itemName,amount)
 	if itemName then
 		local user_id = vRP.getUserId(source)
 		if user_id and actived[user_id] == 0 or not actived[user_id] then
-			if string.match(itemName,"dinheirosujo") or string.match(itemName,"identidade") then
+			if string.match(itemName,"dinheirosujo") or string.match(itemName,"identidade") or string.match(itemName,"xtudo")  or string.match(itemName,"pipoca") or string.match(itemName,"donut")  or string.match(itemName,"hotdog") or string.match(itemName,"sanduiche") or string.match(itemName,"batatafrita") or  string.match(itemName,"taco") or string.match(itemName,"chocolate") or string.match(itemName,"macarrao") or string.match(itemName,"churrasco")  or string.match(itemName,"agua")  or string.match(itemName,"fanta")  or string.match(itemName,"cocacola")   or string.match(itemName,"milkshake")  or string.match(itemName,"cafe") then
 				TriggerClientEvent("Notify",source,"importante","Não pode guardar este item em veículos.",8000)
 				return
 			end

@@ -25,14 +25,19 @@ RegisterNUICallback("ButtonClick",function(data,cb)
 		TriggerServerEvent("vanilla-comprar","capuz")
 	elseif data == "vanilla-comprar-c4flare" then
 		TriggerServerEvent("vanilla-comprar","c4flare")	
+	elseif data == "vanilla-comprar-keylogs" then
+		TriggerServerEvent("vanilla-comprar","keylogs")	
+	
 	
 
 	elseif data == "vanilla-vender-algemas" then
 		TriggerServerEvent("vanilla-vender","algemas")
 	elseif data == "vanilla-vender-capuz" then
 		TriggerServerEvent("vanilla-vender","capuz")
-	elseif data == "vanilla-comprar-c4flare" then
-		TriggerServerEvent("vanilla-comprar","c4flare")	
+	elseif data == "vanilla-vender-c4flare" then
+		TriggerServerEvent("vanilla-vender","c4flare")	
+	elseif data == "vanilla-vender-keylogs" then
+		TriggerServerEvent("vanilla-vender","keylogs")	
 
 
 	

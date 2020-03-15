@@ -62,6 +62,7 @@ Citizen.CreateThread(function()
                         if IsControlJustPressed(0,38) and func.CheckPolice() then
                             if func.KeyCard() then
                                 func.CheckRobbery(bank)
+                                TriggerEvent("global:getMochilaRoubo")
                                 HackAnimStart(StartPosition["x"],StartPosition["y"],StartPosition["z"],StartPosition["h"])
                                 TriggerEvent("mhacking:show")
                                 TriggerEvent("mhacking:start",3,60, function (success,time) mycallback(bank,success,time) end)

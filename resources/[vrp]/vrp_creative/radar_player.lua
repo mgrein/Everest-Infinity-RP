@@ -36,7 +36,7 @@ Citizen.CreateThread(function()
 					local fmodel = GetDisplayNameFromVehicleModel(GetEntityModel(e))
 					local fvspeed = GetEntitySpeed(e)*2.236936
 					local fplate = GetVehicleNumberPlateText(e)
-					radar.info = string.format("~y~MODELO: ~w~%s   ~y~VELOCIDADE: ~w~%s MP/H",fmodel,math.ceil(fvspeed))
+					radar.info = string.format("~y~MODELO: ~w~%s  ",fmodel)
 				end
 
 				local bcoordB = GetOffsetFromEntityInWorldCoords(veh,0.0,-105.0,0.0)
@@ -47,11 +47,11 @@ Citizen.CreateThread(function()
 					local bmodel = GetDisplayNameFromVehicleModel(GetEntityModel(j))
 					local bvspeed = GetEntitySpeed(j)*2.236936
 					local bplate = GetVehicleNumberPlateText(j)
-					radar.info2 = string.format("~y~MODELO: ~w~%s   ~y~VELOCIDADE: ~w~%s MP/H",bmodel,math.ceil(bvspeed))
+					radar.info2 = string.format("~y~MODELO: ~w~%s ",bmodel)
 				end
 			end
-			drawTxt(radar.info,6,0.8,0.82,0.40,255,255,255,180)
-			drawTxt(radar.info2,6,0.8,0.84,0.40,255,255,255,180)
+			drawTxt(radar.info,6,0.8,0.80,0.40,255,255,255,180)
+			drawTxt(radar.info2,6,0.8,0.86,0.40,255,255,255,180)
 		end
 
 		if not IsPedInAnyVehicle(PlayerPedId()) and radar.shown then

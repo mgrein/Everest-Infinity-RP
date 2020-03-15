@@ -92,6 +92,7 @@ cfg.items = {
 	["rastreador"] = { "Rastreador de Veículo",5.0 },
 	["contratocargo"] = { "Contrato Cargo",1.00 },
 	["contatoinformante"] = { "Contato de Informante",1.00 },
+	["c4flare"] = { "C4",1.00 },
 
 	--------------------ITENS ILEGAL-----------------------
 	["dinheirosujo"] = { "Dinheiro",0.0 },
@@ -166,7 +167,7 @@ cfg.items = {
 	["overcoin"] = { "Over Coin",0.09 },
 	["ceianatalina"] = { "Over Coin",0.09 },
 	--[COMIDAS]--
-	["chocolate"] = { "Chocolate",0.07 },
+	--[["chocolate"] = { "Chocolate",0.07 },
 	["xtudo"] =  { "x-tudo",0.07 },
     ["pipoca"] = { "Pipoca",0.07 },
     ["taco"] = { "Taco",0.07 },
@@ -180,7 +181,7 @@ cfg.items = {
     ["fanta"] = { "Fanta",0.07 },
     ["cocacola"] = { "Coca cola",0.07 },
     ["milkshake"] = { "Milkshake",0.07 },
-    ["cafe"] = { "Cafe",0.07 },
+    ["cafe"] = { "Cafe",0.07 },]]
 	--[Itens]--
 	["adrenalina"] = { "Adrenalina",0.7 },
 	["ticketcorrida"] =  { "Race",0.07 },

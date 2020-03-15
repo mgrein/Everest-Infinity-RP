@@ -376,7 +376,8 @@ cfg.vehicle_chest_weights = {
     ["mule3"] = 300,
     ["mule"] = 150,
     ["zl12017"] = 40,
-    ["16challenger"] = 50
+    ["16challenger"] = 50,
+    ["senna"] = 40
 }
 cfg.static_chest_types = {
     ["policia"] = {
@@ -468,7 +469,7 @@ cfg.static_chests = {
     {"betainc", -125.19, -638.89, 168.82}, 
     {"mafia2", 417.41,4809.34,-58.99}, -- YAKUZA
     {"vanilla", 92.50, -1291.92, 29.26}, -- VANNILA
-    {"liberty", 109.07,-2012.62,18.31}, -- LIBERTY
+    {"liberty", 1445.76,-1661.57,66.13}, -- LIBERTY
     {"mecanico", -319.33, -131.71, 38.98}, -- MECANICA
     {"bloods", 561.85,-1747.43,33.45}, -- MAFIA2
     {"paramedico", 311.03,-597.19,43.29}, -- HOSPITAL

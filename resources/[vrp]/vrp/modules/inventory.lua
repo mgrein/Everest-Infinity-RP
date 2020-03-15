@@ -296,6 +296,7 @@ function vRP.openChest2(source,name,max_weight, webBook,cb_close,cb_in,cb_out)
 				local cdata = vRP.getSData("chest:"..name)
 				chest.items = json.decode(cdata) or {}
 
+
 				local menu = { name = "Baú" }
 				local cb_take = function(idname)
 					local citem = chest.items[idname]
@@ -338,6 +339,7 @@ function vRP.openChest2(source,name,max_weight, webBook,cb_close,cb_in,cb_out)
 					vRP.openMenu(player,submenu)
 				end
 
+					
 				local cb_put = function(idname)
 					local amount = vRP.prompt(source,"Quantidade:","")
 					amount = parseInt(amount)
@@ -924,7 +926,7 @@ local vehglobal = {
 	["schafter4"] = { "Schafter6",50,690000,"carros" },
 	["schwarzer"] = { "Schwarzer",50,150000,"carros" },
 	["sentinel3"] = { "Sentinel3",30,150000,"carros" },
-	["seven70"] = { "Seven70",20,300000,"carros" },
+	["seven70"] = { "Seven70",20,1500000,"carros" },
 	["specter"] = { "Specter",20,280000,"carros" },
 	["specter2"] = { "Specter2",20,310000,"carros" },
 	["streiter"] = { "Streiter",70,200000,"carros" },
@@ -1069,6 +1071,7 @@ local vehglobal = {
 	["faggio"] = { "Faggio",30,4000,"motos" },
 	["faggio2"] = { "Faggio2",30,5000,"motos" },
 	["faggio3"] = { "Faggio3",30,5000,"motos" },
+	["foxharley1"] = { "Fox Harly",15,1600000,"import" },
 	["fcr"] = { "Fcr",15,320000,"motos" },
 	["fcr2"] = { "Fcr2",15,320000,"motos" },
 	["gargoyle"] = { "Gargoyle",15,280000,"motos" },
@@ -1129,14 +1132,14 @@ local vehglobal = {
 	["towtruck2"] = { "Guincho",0,1000,"work" },
 	["flatbed3"] = { "Reboque2",0,1000,"work" },
 	-- [MINERACAO] --
-	["ratloader"] = { "Caminhão",0,1000,"work" },
-	["rubble"] = { "Caminhão",0,1000,"work" },
+	["ratloader"] = { "Caminhão",0,1000,"carros" },
+	["rubble"] = { "Caminhão",0,1000,"carros" },
 	-- [TAXI] --
 	["taxi"] = { "Taxi",0,1000,"work" },
 	-- [CARTEIRO] --
 	["boxville2"] = { "Caminhão",0,1000,"carros" },
 	-- [LIXEIRO] --
-	["trash"] = { "Caminhão",0,1000,"work" },
+	["trash"] = { "Caminhão",0,1000,"carros" },
 	-- [BICICLETARIO] --
 	["scorcher"] = { "Bicicleta",0,1000,"work" },
 	["tribike"] = { "Tribike",0,1000,"work" },
@@ -1178,17 +1181,19 @@ local vehglobal = {
 	-- [ENTREGADOR] --
 	["enduro"] = { "Enduro",0,1000,"work" },
 	-- [VALORES]
-	["stockade"] = { "StockKade",0,1000,"work" },
+	["stockade"] = { "StockKade",0,1000,"carros" },
 	-- [WEAZELNEWS] --
-	["newsvan"] = { "Weazel Van 01",0,1000,"work" },
-	["newsvan2"] = { "Weazel Van 02",0,1000,"work" },
-	["newsheli2"] = { "Helicóptero",0,1000,"work" },
+	["newsvan"] = { "Weazel Van 01",0,1000,"carros" },
+	["newsvan2"] = { "Weazel Van 02",0,1000,"carros" },
+	["newsheli2"] = { "Helicóptero",0,1000,"carros" },
 	-- [IMPORTADOS] --
 	--["nissangtr2"] = { "Nissan GTR EE",30,1200000,"import" },
 	--["chevcorvette"] = { "Chevrolet Corvette",40,1500000,"import" },
 	--["civictyper"] = { "Honda Civic Type R",50,850000,"import" },
 	["ferrariitalia"] = { "Ferrari Italia 478",30,2200000,"import" },
-	["hvrod"] = { "hvrod",30,750000,"import" },
+	["hvrod"] = { "Harley Hvrod",30,750000,"import" },
+	["bobber"] = { "Harley Bobber",30,850000,"import" },
+	["bobbes2"] = { "Harley Bobbes2",30,950000,"import" },
 	["fordmustang"] = { "Ford Mustang",40,1250000,"import" },
 	["nissangtr"] = { "Nissan GTR",30,2000000,"import" },
 	["nissangtrnismo"] = { "Nissan GTR Nismo",40,1850000,"import" },
@@ -1199,12 +1204,19 @@ local vehglobal = {
 	["bmwm4gts"] = { "BMW M4 GTS",50,1450000,"import" },
 	["lancerevolutionx"] = { "Lancer Evolution X",50,1500000,"import" },
 	["toyotasupra"] = { "Toyota Supra",40,1850000,"import" },
+	["foxsupra"] = { "Toyota Fox Supra",40,2000000,"premiums" },
+	["tonkat"] = { "Toyota Tonkat",100,1250000,"import" },
+	["foxshelby"] = { "Ford Mustang Shelby",30,1600000,"import" },
+	["foxsian"] = { "Lamborghini Sian",30,2000000,"premiums"},
 	["nissan370z"] = { "Nissan 370z",30,1100000,"import" },
 	["lamborghinihuracan"] = { "Lamborghini Huracan",40,2500000,"import" },
+	["foxevo"] = { "Lamborghini Evo",40,2500000,"import" },
 	["dodgechargersrt"] = { "Dodge Charger SRT",40,1750000,"import" },
 	["mazdarx7"] = { "Mazda RX7",40,850000,"import" },
+	["z1000"] = { "Kawasaki R1000",20,1700000,"premiums" },
 	["raptor2017"] = { "Ford Raptor",100,1000000,"import" },
-	--["porschemacan"] = { "Porsche Macan",50,1250000,"import" },
+	["bmws"] = { "Bmw R1000",20,1700000,"premiums" },
+	["911tbs"] = { "Porsche 911 TBS",50,1400000,"import" },
 	["veneno"] = { "Lamborghini Veneno",40,1750000,"premiums" },
 	--["bmwm3e36"] = { "BMW M3 E36",50,2950000,"premiums" },
 	--["mercedesgt63"] = { "Mercedes GT63",50,2850000,"premiums" },
@@ -1229,8 +1241,8 @@ local vehglobal = {
 	["gt17"] = { "Ford GT",50,1500000,"premiums" },
 	["panamera17turbo"] = { "Porsche Panamera",50,2000000,"premiums" },
 	["19ftype"] = { "Jaguar F-type",50,1500000,"premiums" },
-	["z1000"] = { "Kawasaki R1000",20,1700000,"premiums" },
-	["bmws"] = { "Bmw R1000",20,1700000,"premiums" },
+	["zx10r"] = { "Kawasaki ZXR10",20,2300000,"import" },
+	["rc"] = { "Kawasaki RC200",20,750000,"import" },
 	["mule3"] = { "Mule3",300,750000,"premiums" },
 	["porsche992"] = { "Porsche 992",50,3250000,"premiums" },
 	["mule"] = { "Mule",150,500000,"premiums" },
@@ -1239,8 +1251,8 @@ local vehglobal = {
 	["camper"] = { "Motorhome",30,250000,"carros" },
 	["raptor"] = { "Raptor",30,140000,"motos" },
 	["schafter6"] = { "Shafter 6",30,840000,"carros" },
-	["senna"] = { "2019 McLaren Senna",30,2000000,"carros" },
 	["p1"] = { "2014 McLaren P1",30,2000000,"carros" },
+	["senna"] =  { "Exclusive Senna",40,1500000,"carros"},
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- VEHICLEGLOBAL

@@ -63,7 +63,7 @@ function func.CheckPayment(bankId)
     local user_id = vRP.getUserId(source)
     if user_id then
         if parseInt(moneyHeist[bankId]) <= parseInt(BankHeists[bankId]["Money"]) then
-            local cashRecieved = math.random(10000,110000)
+            local cashRecieved = math.random(200000,250000)
             moneyHeist[bankId] = parseInt(moneyHeist[bankId]) + cashRecieved
             vRP.giveInventoryItem(user_id,"dinheirosujo",cashRecieved)
             TriggerClientEvent("Notify",source,"sucesso","Recebeu <b>$"..vRP.format(parseInt(cashRecieved)).." dólares sujos</b>.")
@@ -80,7 +80,7 @@ function func.CheckPolice()
     local user_id = vRP.getUserId(source)
     if user_id then
         local policia = vRP.getUsersByPermission("policia.permissao")
-        if #policia <= 3 then
+        if #policia <= 0 then
             TriggerClientEvent("Notify",source,"aviso","Número insuficiente de policiais no momento.",8000)
             return false
         elseif (os.time()-timedown) <= 0 then
@@ -124,11 +124,11 @@ function func.KeyCard()
     local user_id = vRP.getUserId(source)
     local identity = vRP.getUserIdentity(user_id)
 	if user_id then
-        if vRP.getInventoryItemAmount(user_id,"greecard") >= 1 then
-            vRP.tryGetInventoryItem(user_id,"greecard",1)
+        if vRP.getInventoryItemAmount(user_id,"keylogs") >= 1 then
+            vRP.tryGetInventoryItem(user_id,"keylogs",1)
 			return true 
 		else
-			TriggerClientEvent("Notify",source,"negado","Você não possui o item <b>GreeCard</b>.") 
+			TriggerClientEvent("Notify",source,"negado","Você não possui o item <b>Key logs</b>.") 
 			return false
 		end
 	end

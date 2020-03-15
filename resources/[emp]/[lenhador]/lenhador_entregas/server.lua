@@ -46,7 +46,7 @@ function emP.checkPayment()
 	if user_id then
 		if tora[user_id] == 0 or not tora[user_id] then
 			if vRP.tryGetInventoryItem(user_id,"tora",quantidade[source]) then
-				randmoney = (math.random(230,310)*quantidade[source])
+				randmoney = (math.random(250,350)*quantidade[source])
 		        vRP.giveMoney(user_id,parseInt(randmoney))
 		        TriggerClientEvent("vrp_sound:source",source,'coins',0.5)
 		        TriggerClientEvent("Notify",source,"sucesso","Você recebeu <b>$"..vRP.format(parseInt(randmoney)).." dólares</b>.")

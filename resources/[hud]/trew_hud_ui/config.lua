@@ -1,6 +1,6 @@
 local Config = {}
 
-Config.Locale = 'en'
+Config.Locale = 'br'
 
 Config.serverLogo = 'img/logo.png'
 
@@ -45,7 +45,7 @@ Config.ui = {
     showVoice = true,
 
     showHealth = true,
-    showArmor = true,
+    showArmor = false,
     showStamina = true,
     showHunger = true,
     showThirst = true,

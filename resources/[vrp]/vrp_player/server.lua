@@ -100,6 +100,7 @@ local salarios = {
 	{ ['permissao'] = "juiz.permissao", ['nome'] = "JUIZ", ['payment'] = 3050 },
 	{ ['permissao'] = "juridico.permissao", ['nome'] = "JURIDICO", ['payment'] = 1050 },
 	{ ['permissao'] = "mecanico.permissao", ['nome'] = "MECANICO", ['payment'] = 900 },
+	{ ['permissao'] = "weazelnews.permissao", ['nome'] = "WEAZEL NEWS", ['payment'] = 2500 },
 	{ ['permissao'] = "bennys.permissao", ['nome'] = "BENNYS", ['payment'] = 700 },
 	{ ['permissao'] = "advogado.permissao", ['nome'] = "ADVOGADO", ['payment'] = 1250 },
 	{ ['permissao'] = "psicologia.permissao", ['nome'] = "PSICOLOGIA", ['payment'] = 450 },
@@ -765,7 +766,7 @@ AddEventHandler('vrp_player:efeutarchamado', function(number, message)
 				players = vRP.getUsersByPermission("advogado.permissao")
 			elseif tipoChamado == "admin" then
 				nomeChamado = "ADMIN - "
-				players = vRP.getUsersByPermission("admin.permissao") 
+				players = vRP.getUsersByPermission("moderador.permissao") 
 			end
 			local identitys = vRP.getUserIdentity(user_id)
 			TriggerClientEvent("Notify",source,"sucesso","Chamado enviado com sucesso.")
@@ -790,7 +791,7 @@ AddEventHandler('vrp_player:efeutarchamado', function(number, message)
 								vRPclient.playSound(source,"Event_Message_Purple","GTAO_FM_Events_Soundset")
 								vRPclient._setGPS(player,x,y)
 
-								if tipoChamado == "admin" and vRP.hasPermission(nuser_id,"admin.permissao")  then
+								if tipoChamado == "admin" and vRP.hasPermission(nuser_id,"moderador.permissao")  then
 									vRPclient.teleport(player, x, y, z)
 								else
 									
@@ -829,6 +830,23 @@ RegisterCommand('120',function(source,args,rawCommand)
 			TriggerClientEvent('chatMessage',-1,"[CSS]: "..identity.name.." "..identity.firstname,{255,255,0},rawCommand:sub(4))
 		end
 	end
+end)
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- FESTINHA
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand('festinha',function(source,args,rawCommand)
+    local user_id = vRP.getUserId(source)
+    if vRP.hasPermission(user_id,"event.permissao") or vRP.hasPermission(user_id,"admin.permissao") then
+        local identity = vRP.getUserIdentity(user_id)
+        local mensagem = vRP.prompt(source,"Mensagem:","")
+        if mensagem == "" then
+            return
+        end
+        vRPclient.setDiv(-1,"festinha"," @keyframes blinking {    0%{ background-color: #ff3d50; border: 2px solid #871924; opacity: 0.8; } 25%{ background-color: #d22d99; border: 2px solid #901f69; opacity: 0.8; } 50%{ background-color: #55d66b; border: 2px solid #126620; opacity: 0.8; } 75%{ background-color: #22e5e0; border: 2px solid #15928f; opacity: 0.8; } 100%{ background-color: #222291; border: 2px solid #6565f2; opacity: 0.8; }  } .div_festinha { font-size: 11px; font-family: arial; color: rgba(255, 255, 255,1); padding: 20px; bottom: 10%; right: 5%; max-width: 500px; position: absolute; -webkit-border-radius: 5px; animation: blinking 1s infinite; } bold { font-size: 16px; }","<bold>"..mensagem.."</bold><br><br>Festeiro(a): "..identity.name.." "..identity.firstname)
+        SetTimeout(7000,function()
+            vRPclient.removeDiv(-1,"festinha")
+        end)
+    end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- NEWS
@@ -1596,18 +1614,55 @@ RegisterCommand('playerids',function(source,args,rawCommand)
     local policia = vRP.getUsersByPermission("policia.permissao")
     local ems = vRP.getUsersByPermission("paramedico.permissao")
     local mec = vRP.getUsersByPermission("mecanico.permissao")
-    local tax = vRP.getUsersByPermission("taxista.permissao")
+	local tax = vRP.getUsersByPermission("taxista.permissao")
+	local juiz = vRP.getUsersByPermission("juiz.permissao")
     if vRP.hasPermission(user_id,"admin.permissao") then
 	    if user_id then
 	        TriggerClientEvent('chatMessage',source,"ALERTA",{65, 19, 136},"Jogadores na cidade: "..onlinePlayers)
-	        TriggerClientEvent('chatMessage',source,"-------------------------------------------- ")
+	        TriggerClientEvent('chatMessage',source,"---------------------LEGAL----------------------- ")
 	        TriggerClientEvent('chatMessage',source,"ALERTA",{58, 5, 252},"Policiais disponíveis: "..#policia)
 	        TriggerClientEvent('chatMessage',source,"ALERTA",{234, 9, 0},"Paramédicos disponíveis: "..#ems)
 	        TriggerClientEvent('chatMessage',source,"ALERTA",{100, 252, 0},"Mecânicos disponíveis: "..#mec)
-	        TriggerClientEvent('chatMessage',source,"ALERTA",{254, 224, 0},"Taxistas disponíveis: "..#tax)
+			TriggerClientEvent('chatMessage',source,"ALERTA",{254, 224, 0},"Taxistas disponíveis: "..#tax)
+			TriggerClientEvent('chatMessage',source,"ALERTA",{254, 224, 0},"Juiz disponíveis: "..#juiz)
 	    end
 	end
 end)
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- PLAYERS IDS
+-----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand('ilegal',function(source,args,rawCommand)
+    local onlinePlayers = GetNumPlayerIndices()
+    local source = source
+    local user_id = vRP.getUserId(source)
+	local ballas = vRP.getUsersByPermission("ballas.permissao")
+	local vagos = vRP.getUsersByPermission("vagos.permissao")
+	local groove = vRP.getUsersByPermission("groove.permissao")
+	local mafia = vRP.getUsersByPermission("mafia.permissao")
+	local liberty = vRP.getUsersByPermission("liberty.permissao")
+	local crips = vRP.getUsersByPermission("crips.permissao")
+	local bloods = vRP.getUsersByPermission("bloods.permissao")
+	local motoclub = vRP.getUsersByPermission("motoclub.permissao")
+	local vanilla = vRP.getUsersByPermission("vanilla.permissao")
+	local bahamas = vRP.getUsersByPermission("vanilla.permissao")
+    if vRP.hasPermission(user_id,"admin.permissao") then
+	    if user_id then
+	        TriggerClientEvent('chatMessage',source,"ALERTA",{65, 19, 136},"Jogadores na cidade: "..onlinePlayers)
+	        TriggerClientEvent('chatMessage',source,"--------------------ILEGAL------------------------ ")
+	        TriggerClientEvent('chatMessage',source,"ALERTA",{58, 5, 252},"Ballas disponíveis: "..#ballas)
+	        TriggerClientEvent('chatMessage',source,"ALERTA",{234, 9, 0},"Vagos disponíveis: "..#vagos)
+	        TriggerClientEvent('chatMessage',source,"ALERTA",{100, 252, 0},"Groove disponíveis: "..#groove)
+			TriggerClientEvent('chatMessage',source,"ALERTA",{254, 224, 0},"Mafia disponíveis: "..#mafia)
+			TriggerClientEvent('chatMessage',source,"ALERTA",{254, 224, 0},"Liberty disponíveis: "..#liberty)
+			TriggerClientEvent('chatMessage',source,"ALERTA",{234, 9, 0},"Bloods disponíveis: "..#bloods)
+			TriggerClientEvent('chatMessage',source,"ALERTA",{234, 9, 0},"Motoclub disponíveis: "..#motoclub)
+			TriggerClientEvent('chatMessage',source,"ALERTA",{234, 9, 0},"Vanilla disponíveis: "..#vanilla)
+			TriggerClientEvent('chatMessage',source,"ALERTA",{234, 9, 0},"Bahamas disponíveis: "..#bahamas)
+	    end
+	end
+end)
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- IDplayer
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -1693,4 +1748,27 @@ RegisterCommand('adrenalina',function(source,args,rawCommand)
 		TriggerClientEvent("Notify",source,"negado","Existem paramédicos em serviço, solicite atendimento.",8000)
 	end
 	return true
+end)
+
+RegisterCommand('transferir',function(source,args,rawCommand)
+    local user_id = vRP.getUserId(source)
+    if user_id then
+        local passaporte = vRP.prompt(source,"Passaporte:","")
+        local valor = vRP.prompt(source,"Valor:","")
+        if passaporte == "" or valor == "" then
+            return
+        end
+        local banco = vRP.getBankMoney(user_id)
+        local nplayer = vRP.getUserId(parseInt(passaporte))
+        local bancon = vRP.getBankMoney(nplayer)
+        if banco >= parseInt(valor) then
+            vRP.setBankMoney(user_id,parseInt(banco-valor))
+            vRP.setBankMoney(nplayer,parseInt(bancon+valor))
+            TriggerClientEvent("Notify",source,"sucesso","Enviou <b>$"..vRP.format(valor).." dólares</b> ao passaporte <b>"..vRP.format(parseInt(passaporte)).."</b>.",8000)
+            local identity = vRP.getUserIdentity(user_id)
+            TriggerClientEvent("Notify",nplayer,"importante","<b>"..identity.name.." "..identity.firstname.."</b> transferiu <b>$"..vRP.format(parseInt(valor)).." dólares</b> para sua conta do paypal.",8000)
+        else
+            TriggerClientEvent("Notify",source,"negado","Dinheiro insuficiente.",8000)
+        end
+    end
 end)

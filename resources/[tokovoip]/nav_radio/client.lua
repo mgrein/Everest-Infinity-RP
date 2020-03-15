@@ -111,6 +111,11 @@ RegisterNUICallback("ButtonClick", function(data, cb)
             outServers()
             exports.tokovoip_script:addPlayerToRadio(18)
         end
+    elseif data == "Bahamas" then
+        if emP.checkPermission("bahamas.permissao", "Bahamas") then
+            outServers()
+            exports.tokovoip_script:addPlayerToRadio(18)
+        end
 
     elseif data == "desconectar" then
         outServers()

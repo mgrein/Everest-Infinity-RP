@@ -10,6 +10,7 @@ local valores = {
 	{ item = "algemas", quantidade = 1, compra = 200, venda = 100 },
 	{ item = "capuz", quantidade = 1, compra = 200, venda = 100 },
 	{ item = "c4flare", quantidade = 1, compra = 100, venda = 50 },
+	{ item = "keylogs", quantidade = 1, compra = 100, venda = 50 },
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- COMPRAR

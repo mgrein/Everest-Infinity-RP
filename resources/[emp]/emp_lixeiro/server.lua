@@ -11,7 +11,7 @@ function emP.checkLixeiro()
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		if vRP.tryGetInventoryItem(user_id,"sacodelixo",1) then
-			vRP.giveMoney(user_id,math.random(120,300))
+			vRP.giveMoney(user_id,math.random(250,450))
 			return true
 		end
 	end

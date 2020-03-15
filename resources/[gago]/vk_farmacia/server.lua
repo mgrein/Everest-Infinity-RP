@@ -16,8 +16,8 @@ vCLIENT = Tunnel.getInterface("vk_farmacia")
 -----------------------------------------------------------------------------------------------------------------------------------------
 local utilidades = {
     ["adrenalina"] = { ['price'] = 10000 },
-    ["bandagem"] = { ['price'] = 3000 },
-    ["remedio"] = { ['price'] = 6000 },
+    ["bandagem"] = { ['price'] = 4000 },
+    ["remedio"] = { ['price'] = 2000 },
     ["agua"] = {['price'] = 120}
 }
 

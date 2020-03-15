@@ -9,7 +9,7 @@ Tunnel.bindInterface("emp_motorista",emP)
 function emP.checkPayment(bonus)
 	local source = source
 	local user_id = vRP.getUserId(source)
-	local pagamento = math.random(120,230)+bonus
+	local pagamento = math.random(250,500)+bonus
 	if user_id then
 		vRP.giveMoney(user_id,pagamento)
 		TriggerClientEvent("Notify",source,"sucesso","Você recebeu <b>$"..(pagamento).."</b> e bônus de <b>$"..bonus.." dólares</b>.")

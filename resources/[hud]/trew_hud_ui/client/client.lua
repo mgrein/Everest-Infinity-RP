@@ -55,6 +55,8 @@ end)
 
 
 
+
+
 -- Date and time update
 Citizen.CreateThread(function()
 	while true do
@@ -854,7 +856,6 @@ end
 local toggleui = false
 RegisterCommand('toggleui', function()
 	if not toggleui then
-		SendNUIMessage({ action = 'toggleUi', value = true })
 		SendNUIMessage({ action = 'element', task = 'disable', value = 'job' })
 		SendNUIMessage({ action = 'element', task = 'disable', value = 'society' })
 		SendNUIMessage({ action = 'element', task = 'disable', value = 'bank' })
@@ -862,7 +863,6 @@ RegisterCommand('toggleui', function()
 		SendNUIMessage({ action = 'element', task = 'disable', value = 'wallet' })
 	else
 
-		SendNUIMessage({ action = 'toggleUi', value = false })
 		if (Config.ui.showJob == true) then
 			SendNUIMessage({ action = 'element', task = 'enable', value = 'job' })
 		end

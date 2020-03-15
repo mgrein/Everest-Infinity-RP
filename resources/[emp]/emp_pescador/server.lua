@@ -23,11 +23,7 @@ function emP.checkPayment()
 	if user_id then
 		if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("dourado") <= vRP.getInventoryMaxWeight(user_id) then
 			if vRP.tryGetInventoryItem(user_id,"isca",1) then
-				if math.random(100) >= 98 then
-					vRP.giveInventoryItem(user_id,"lambari",1)
-				else
-					vRP.giveInventoryItem(user_id,peixes[math.random(8)].x,1)
-				end
+				vRP.giveInventoryItem(user_id,peixes[math.random(11)].x,1)
 				return true
 			end
 		end

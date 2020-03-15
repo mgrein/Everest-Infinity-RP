@@ -34,10 +34,57 @@ RegisterCommand('fix',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	local vehicle = vRPclient.getNearestVehicle(source,11)
 	if vehicle then
-		if vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
+		if vRP.hasPermission(user_id,"admin.permissao")  then
 			TriggerClientEvent('reparar',source)
 		end
 	end
+end)
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- ADD CAR
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand('addcar',function(source,args,rawCommand)
+    local user_id = vRP.getUserId(source)
+    local nplayer = vRP.getUserId(parseInt(args[2]))
+    if vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
+        if args[1] and args[2] then
+            local nuser_id = vRP.getUserId(nplayer)
+            local identity = vRP.getUserIdentity(user_id)
+            local identitynu = vRP.getUserIdentity(nuser_id)
+            vRP.execute("creative/add_vehicle",{ user_id = parseInt(args[2]), vehicle = args[1], ipva = parseInt(os.time()) }) 
+            vRP.execute("creative/set_ipva",{ user_id = parseInt(args[2]), vehicle = args[1], ipva = parseInt(os.time()) })
+            TriggerClientEvent("Notify",source,"sucesso","Voce adicionou o veículo <b>"..args[1].."</b> para o Passaporte: <b>"..parseInt(args[2]).."</b>.") 
+			TriggerEvent("everest:postarDiscord", source, DISCORD_WEBHOOK, "[ID]: "..user_id.." "..identity.name.." "..identity.firstname.." \n[ADICIONOU]: "..args[1].." \n[PARA O ID]: "..nuser_id.." "..identitynu.name.." "..identitynu.firstname.." "..os.date("\n[Data]: %d/%m/%Y [Hora]: %H:%M:%S").." \r```") 
+        end
+    end
+end)
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- REM CAR
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand('remcar',function(source,args,rawCommand)
+    local user_id = vRP.getUserId(source)
+    local nplayer = vRP.getUserId(parseInt(args[2]))
+    if vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
+        if args[1] and args[2] then
+            local nuser_id = vRP.getUserId(nplayer)
+            local identity = vRP.getUserIdentity(user_id)
+            local identitynu = vRP.getUserIdentity(nuser_id)
+            vRP.execute("creative/rem_vehicle",{ user_id = parseInt(args[2]), vehicle = args[1], ipva = parseInt(os.time())  }) 
+            TriggerClientEvent("Notify",source,"sucesso","Voce removeu o veículo <b>"..args[1].."</b> do Passaporte: <b>"..parseInt(args[2]).."</b>.") 
+			TriggerEvent("everest:postarDiscord", source, DISCORD_WEBHOOK, "[ID]: "..user_id.." "..identity.name.." "..identity.firstname.." \n[REMOVEU]: "..args[1].." \n[PARA O ID]: "..nuser_id.." "..identitynu.name.." "..identitynu.firstname.." "..os.date("\n[Data]: %d/%m/%Y [Hora]: %H:%M:%S").." \r```")
+        end
+    end
+end)
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- ESTOQUE
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand('estoque',function(source,args,rawCommand)
+    local user_id = vRP.getUserId(source)
+    if vRP.hasPermission(user_id,"admin.permissao") then
+        if args[1] and args[2] then
+            vRP.execute("creative/set_estoque",{ vehicle = args[1], quantidade = args[2] })
+            TriggerClientEvent("Notify",source,"sucesso","Voce colocou mais <b>"..args[2].."</b> no estoque, para o veículo <b>"..args[1].."</b>.") 
+        end
+    end
 end)
 
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -45,7 +92,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterCommand('life',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
-	if vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"support.permissao") then
+	if vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
 		local vida = 400
 		if args[2] then
 			vida = parseInt(args[2])
@@ -118,7 +165,7 @@ end)
 RegisterCommand('wl',function(source,args,rawCommand)
     local user_id = vRP.getUserId(source)
     local identity = vRP.getUserIdentity(user_id)
-    if vRP.hasPermission(user_id,"admin.permissao")  or vRP.hasPermission(user_id,"moderador.permissao") then
+    if vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") or vRP.hasPermission(user_id,"moderador2.permissao") then
         if args[1] then
             vRP.setWhitelisted(parseInt(args[1]),true)
             TriggerClientEvent("Notify",source,"sucesso","Voce aprovou o passaporte <b>"..args[1].."</b> na whitelist.")
@@ -132,7 +179,7 @@ end)
 RegisterCommand('unwl',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	local identity = vRP.getUserIdentity(user_id)
-	if vRP.hasPermission(user_id,"admin.permissao")  or vRP.hasPermission(user_id,"moderador.permissao")  then
+    if vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") or vRP.hasPermission(user_id,"moderador2.permissao") then
 		if args[1] then
 			vRP.setWhitelisted(parseInt(args[1]),false)
 			TriggerClientEvent("Notify",source,"sucesso","Voce retirou o passaporte <b>"..args[1].."</b> da whitelist.")
@@ -163,7 +210,7 @@ end)
 RegisterCommand('ban',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	local identity = vRP.getUserIdentity(user_id)
-	if vRP.hasPermission(user_id,"admin.permissao") then
+	if vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
 		if args[1] then
 			vRP.setBanned(parseInt(args[1]),true)
 			TriggerClientEvent("Notify",source,"sucesso","Voce baniu o passaporte <b>"..args[1].."</b> da cidade.")
@@ -202,7 +249,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterCommand('item',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
-	if vRP.hasPermission(user_id,"admin.permissao") then
+	if vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao")then
 		if args[1] and args[2] then
 			vRP.giveInventoryItem(user_id,args[1],parseInt(args[2]))
 			TriggerClientEvent("Notify",source,"aviso","Você spawnou <b>"..args[1].." Item</b>.")
@@ -215,8 +262,9 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterCommand('nc',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
-	if vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
+    if vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") or vRP.hasPermission(user_id,"moderador2.permissao") then
 		vRPclient.toggleNoclip(source)
+		TriggerEvent("everest:postarDiscord", source, DISCORD_WEBHOOK, "NC [ID]: "..user_id.." "..identity.name.." "..identity.firstname.." "..os.date("\n[Data]: %d/%m/%Y [Hora]: %H:%M:%S").." \r```")
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -244,7 +292,8 @@ RegisterCommand('cds',function(source,args,rawCommand)
     if user_id then
         if vRP.hasPermission(user_id,"admin.permissao") then
             local x,y,z = vRPclient.getPosition(source)
-            vRP.prompt(source,"Cordenadas:",mathLegth(x)..","..mathLegth(y)..","..mathLegth(z))
+			vRP.prompt(source,"Cordenadas:",mathLegth(x)..","..mathLegth(y)..","..mathLegth(z))
+			TriggerEvent("everest:postarDiscord", source, DISCORD_WEBHOOK, "\n[PASSAPORTE]: "..user_id.." \n[LUGAR]: "..lugar.." \n[CDS]: [] = { ['x'] = "..tD(x)..", ['y'] = "..tD(y)..", ['z'] = "..tD(z).." }, \r```")
         end
     end
 end)
@@ -359,6 +408,22 @@ RegisterCommand('adm',function(source,args,rawCommand)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
+-- ADM2
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand('adm2',function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
+		local mensagem = vRP.prompt(source,"Mensagem:","")
+		if mensagem == "" then
+			return
+		end
+		vRPclient.setDiv(-1,"anuncio",".div_anuncio { background: rgba(0,0,0,0.8); font-size: 11px; font-family: arial; color: #fff; padding: 20px; bottom: 10%; right: 5%; max-width: 500px; position: absolute; -webkit-border-radius: 5px; } bold { font-size: 16px; }","<bold>"..mensagem.."</bold><br><br>Mensagem enviada por: Desenvolvedores")
+		SetTimeout(60000,function()
+			vRPclient.removeDiv(-1,"anuncio")
+		end)
+	end
+end)
+-----------------------------------------------------------------------------------------------------------------------------------------
 -- PLAYERSON
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterCommand('online',function(source,args,rawCommand)
@@ -419,8 +484,7 @@ RegisterCommand('carcolor',function(source,args,rawCommand,player)
     local vehicle = vRPclient.getNearestVehicle(source,15)
     if vRP.hasPermission(user_id,"admin.permissao") then
         local prompt = vRP.prompt(source,"RGB:", "255 255 255")
-        SetVehicleCustomPrimaryColour(vehicle, prompt)
-        SetVehicleCustomSecondaryColour(vehicle, GetVehicleCustomPrimaryColour(vehicle))
+		vCLIENT.vehiclePrimary(source,vehicle,parseInt(r2),parseInt(g2),parseInt(b2))
     end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -467,7 +531,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterCommand('npc',function(source,args,rawCommand)
     local user_id = vRP.getUserId(source)
-    if vRP.hasPermission(user_id,"moderador.permissao") then
+    if vRP.hasPermission(user_id,"admin.permissao") then
         local modelhash = vRP.prompt(source,"Modelhash:","")
         TriggerClientEvent('npctransform',source,modelhash)
     end
@@ -477,7 +541,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterCommand('skin',function(source,args,rawCommand)
     local user_id = vRP.getUserId(source)
-    if vRP.hasPermission(user_id,"moderador.permissao") then
+    if vRP.hasPermission(user_id,"moderador.permissao") or vRP.hasPermission(user_id,"admin.permissao") then
         if parseInt(args[1]) then
             local nplayer = vRP.getUserSource(parseInt(args[1]))
             if nplayer then

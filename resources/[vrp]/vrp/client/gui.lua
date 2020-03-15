@@ -211,12 +211,7 @@ Citizen.CreateThread(function()
 		-- FALAR NO RADINHO (F5)
 		if IsControlJustPressed(0,166) then
 			if not IsPedInAnyVehicle(ped) and GetEntityHealth(ped) > 100 and not menu_state.opened and not menu_celular then
-				if IsEntityPlayingAnim(ped,"random@arrests","generic_radio_enter",3) then
-					tvRP.DeletarObjeto()
-				else
-					tvRP.CarregarAnim("random@arrests")
-					TaskPlayAnim(ped,"random@arrests","generic_radio_enter",3.0,3.0,-1,50,5.0,0,0,0)
-				end
+				tvRP.playAnim(true,{{"timetable@reunited@ig_2","jimmy_getknocked"}},false)
         	end
 		end
 

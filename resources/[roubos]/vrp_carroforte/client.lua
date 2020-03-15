@@ -41,13 +41,18 @@ Citizen.CreateThread(function()
 		Citizen.Wait(5)
 		local ped = PlayerPedId()
 		local x,y,z = table.unpack(GetEntityCoords(ped))
-		if Vdist(CoordenadaX,CoordenadaY,CoordenadaZ,x,y,z) <= 30.0 then
-			DrawMarker(23,CoordenadaX,CoordenadaY,CoordenadaZ-0.97,0,0,0,0,0,0,1.0,1.0,0.5,240,200,80,20,0,0,0,0)
-			if Vdist(CoordenadaX,CoordenadaY,CoordenadaZ,x,y,z) <= 1.2 then
-				drawTxt("PRESSIONE  ~b~E~w~  PARA HACKEAR",4,0.5,0.93,0.50,255,255,255,180)
+		if Vdist(CoordenadaX,CoordenadaY,CoordenadaZ,x,y,z) <= 3 then
+			DrawMarker(21,CoordenadaX,CoordenadaY,CoordenadaZ-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,255,0,0,50,0,0,0,1)
+			if Vdist(CoordenadaX,CoordenadaY,CoordenadaZ,x,y,z) <= 1 then
+				drawTxt("PRESSIONE  ~r~E~w~  PARA HACKEAR",4,0.5,0.93,0.50,255,255,255,180)
 				if IsControlJustPressed(0,38) and vSERVER.checkTimers() then
+					TriggerEvent('cancelando',true)
+					vRP._playAnim(false,{{"anim@heists@ornate_bank@hack","hack_loop"}},true)
+					laptop = CreateObject(GetHashKey("prop_laptop_01a"),x-0.6,y+0.2,z-1,true,true,true)
+					SetEntityHeading(ped,85.77)
+					SetEntityHeading(laptop,85.77)
 					TriggerEvent("mhacking:show")
-					TriggerEvent("mhacking:start",3,30,mycallback)
+					TriggerEvent("mhacking:start",3,20,mycallback)
 				end
 			end
 		end
@@ -60,9 +65,15 @@ function mycallback(success,time)
 	if success then
 		TriggerEvent("mhacking:hide")
 		vSERVER.checkStockade()
+		DeleteObject(laptop)
+		vRP._stopAnim(false)
+		TriggerEvent('cancelando',false)
 	else
 		TriggerEvent("mhacking:hide")
 		vSERVER.resetTimer()
+		DeleteObject(laptop)
+		vRP._stopAnim(false)
+		TriggerEvent('cancelando',false)
 	end
 end
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -71,7 +82,7 @@ end
 function src.startStockade()
 	pos = math.random(#locs)
 	src.spawnStockade(locs[pos].x,locs[pos].y,locs[pos].z,locs[pos].x2,locs[pos].y2,locs[pos].z2,locs[pos].h)
-	TriggerEvent("Notify","sucesso","Hackeado com sucesso.",8000)
+	TriggerEvent("Notify","sucesso","Hackeado com sucesso, instalado o rastreador no carro forte.",8000)
 end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- SPAWNVEHICLE
@@ -177,7 +188,7 @@ Citizen.CreateThread(function()
 				vSERVER.markOcorrency(x,y,z)
 				bomba = CreateObject(GetHashKey("prop_c4_final_green"),x,y,z,true,true,false)
 				AttachEntityToEntity(bomba,nveh,GetEntityBoneIndexByName(nveh,"door_dside_r"),0.78,0.0,0.0,180.0,-90.0,180.0,false,false,false,true,2,true)
-				SetTimeout(25000,function()
+				SetTimeout(5000,function()
 					TriggerServerEvent("tryDeleteEntity",PedToNet(pveh01))
 					TriggerServerEvent("tryDeleteEntity",PedToNet(pveh02))
 					TriggerServerEvent("tryDeleteEntity",ObjToNet(bomba))

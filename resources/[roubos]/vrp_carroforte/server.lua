@@ -27,7 +27,7 @@ function src.checkTimers()
 	if user_id then
 		if vRP.getInventoryItemAmount(user_id,"rubberducky") >= 1 then
 			local policia = vRP.getUsersByPermission("policia.permissao")
-			if #policia <= 4 then
+			if #policia <= 3 then
 				TriggerClientEvent("Notify",source,"aviso","Número insuficiente de policiais no momento.",8000)
 				return false
 			elseif parseInt(os.time()-timers) <= 3600 then
@@ -58,7 +58,7 @@ end
 -- DROPAR
 -----------------------------------------------------------------------------------------------------------------------------------------
 function src.dropSystem(x,y,z)
-	TriggerEvent("DropSystem:create","dinheirosujo",math.random(120000,180000),x,y,z)
+	TriggerEvent("DropSystem:create","dinheirosujo",math.random(420000,480000),x,y,z)
 end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- DROPAR

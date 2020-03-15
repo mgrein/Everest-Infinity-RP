@@ -5,13 +5,22 @@ cfg.groups = {
 		"admin.permissao",
 		"polpar.permissao",
 		"moderador.permissao",
+		"moderador2.permissao",
 		"dv.permissao"
 	},
 	["moderador"] = {
 		"moderador.permissao",
+		"polpar.permissao",
 		"dv.permissao"
 	},
+	["moderador2"] = {
+		"moderador2.permissao"
+	},
 	["concessionaria"] = {
+		_config = {
+			title = "Concessionaria",
+			gtype = "job"
+		},
 		"conce.permissao",
 		"dv.permissao"
 	},
@@ -266,6 +275,7 @@ cfg.groups = {
 	["Weazelnews"] = {
 		_config = {
 			title = "Weazelnews",
+			gtype = "job"
 		},
 		"weazelnews.permissao",
 		"entrada.permissao"

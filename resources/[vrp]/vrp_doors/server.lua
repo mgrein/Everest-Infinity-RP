@@ -15,7 +15,7 @@ AddEventHandler('vrpdoorsystem:open', function(id)
     local source = source
     local user_id = vRP.getUserId(source)
     if vRP.hasPermission(user_id, cfg.list[id].perm) or
-        vRP.hasPermission(user_id, "admin.permissao") then
+        vRP.hasPermission(user_id, "admin.permissao") or  vRP.hasPermission(user_id, "moderador.permissao") then
         cfg.list[id].lock = not cfg.list[id].lock
         TriggerClientEvent('vrpdoorsystem:statusSend', -1, id, cfg.list[id].lock)
         if cfg.list[id].other ~= nil then

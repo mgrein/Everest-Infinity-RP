@@ -36,7 +36,7 @@ Citizen.CreateThread(function()
 					local fmodel = GetDisplayNameFromVehicleModel(GetEntityModel(e))
 					local fvspeed = GetEntitySpeed(e)*2.236936
 					local fplate = GetVehicleNumberPlateText(e)
-					radar.info = string.format("~y~PLACA: ~w~%s   ~y~MODELO: ~w~%s   ~y~VELOCIDADE: ~w~%s MP/H",fplate,fmodel,math.ceil(fvspeed))
+					radar.info = string.format("~y~PLACA: ~w~%s    ~y~VELOCIDADE: ~w~%s MP/H",fplate,math.ceil(fvspeed))
 				end
 
 				local bcoordB = GetOffsetFromEntityInWorldCoords(veh,0.0,-105.0,0.0)
@@ -47,7 +47,7 @@ Citizen.CreateThread(function()
 					local bmodel = GetDisplayNameFromVehicleModel(GetEntityModel(j))
 					local bvspeed = GetEntitySpeed(j)*2.236936
 					local bplate = GetVehicleNumberPlateText(j)
-					radar.info2 = string.format("~y~PLACA: ~w~%s   ~y~MODELO: ~w~%s   ~y~VELOCIDADE: ~w~%s MP/H",bplate,bmodel,math.ceil(bvspeed))
+					radar.info2 = string.format("~y~PLACA: ~w~%s   ~y~VELOCIDADE: ~w~%s MP/H",bplate,math.ceil(bvspeed))
 				end
 			end
 			drawTxt(radar.info,6,0.8,0.82,0.40,255,255,255,180)

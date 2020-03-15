@@ -5,8 +5,8 @@ Config = {
 	deformationExponent = 0.6,					-- How much should the handling file deformation setting be compressed toward 1.0. (Make cars more similar). A value of 1=no change. Lower values will compress more, values above 1 it will expand. Dont set to zero or negative.
 	collisionDamageExponent = 0.9,				-- How much should the handling file deformation setting be compressed toward 1.0. (Make cars more similar). A value of 1=no change. Lower values will compress more, values above 1 it will expand. Dont set to zero or negative.
 
-	damageFactorEngine = 1.3,					-- Os valores são de 1 a 100. Valores mais altos significam mais danos ao veículo. Um bom ponto de partida é 10
-	damageFactorBody = 1.8,						-- Sane values are 1 to 100. Higher values means more damage to vehicle. A good starting point is 10
+	damageFactorEngine = 0.4,					-- Os valores são de 1 a 100. Valores mais altos significam mais danos ao veículo. Um bom ponto de partida é 10
+	damageFactorBody = 0.5,						-- Sane values are 1 to 100. Higher values means more damage to vehicle. A good starting point is 10
 	damageFactorPetrolTank = 35.0,				-- Sane values are 1 to 200. Higher values means more damage to vehicle. A good starting point is 64
 	engineDamageExponent = 0.6,					-- Quanto a configuração de danos no mecanismo de manipulação de arquivos deve ser compactada em direção a 1.0. (Faça carros mais semelhantes). Um valor de 1 = sem alteração. Valores mais baixos irão comprimir mais, valores acima de 1 serão expandidos. Não defina a zero ou negativo.
 	weaponsDamageMultiplier = 2.0,				-- Quanto dano o veículo deve receber do fogo das armas. Faixa de 0,0 a 10,0, onde 0,0 não é dano e 10,0 é 10x dano. -1 = não toque

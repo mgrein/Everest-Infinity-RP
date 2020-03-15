@@ -16,13 +16,12 @@ vCLIENT = Tunnel.getInterface("gago_motoclub")
 -----------------------------------------------------------------------------------------------------------------------------------------
 local armas = {
 	["wbody|WEAPON_PISTOL_MK2"] = { ['price'] = 50 },
-	["wbody|WEAPON_MICROSMG"] = { ['price'] = 100 },
+	["wbody|WEAPON_MICROSMG"] = { ['price'] = 125 },
 	["wbody|WEAPON_ASSAULTSMG"] = { ['price'] = 125 },
 	["wbody|WEAPON_GUSENBERG"] = { ['price'] = 125 },
 	["wbody|WEAPON_SPECIALCARBINE"] = { ['price'] = 125 },
-	["wbody|WEAPON_ASSAULTRIFLE"] = { ['price'] = 125 },
+	["wbody|WEAPON_ASSAULTRIFLE"] = { ['price'] = 150 }
 }
-
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- ARMAS
 -----------------------------------------------------------------------------------------------------------------------------------------

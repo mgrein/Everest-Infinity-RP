@@ -17,7 +17,15 @@ vCLIENT = Tunnel.getInterface("gago_liberty")
 local liberty = {
 	["ticketcorrida"] = { ['price'] = 50 },
 	["placa"] = { ['price'] = 55 },
-	["rastreador"] = { ['price'] = 100 }
+	["rastreador"] = { ['price'] = 100 },
+	["lockpick"] = { ['price'] = 55 },
+	["masterpick"] = { ['price'] = 55 },
+	["pendrive"] = { ['price'] = 55 },
+	["rebite"] = { ['price'] = 55 },
+	["rubberducky"] = { ['price'] = 55 },
+	["chavemestra"] = { ['price'] = 55 },
+	["serra"] = { ['price'] = 55 },
+	["furadeira"] = { ['price'] = 55 }
     
 }
 

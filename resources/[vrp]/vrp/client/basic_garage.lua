@@ -116,6 +116,7 @@ local vehList = {
 	{ "bifta",-349601129,false },
 	{ "brickade",-305727417,false },
 	{ "bodhi2",-1435919434,false },
+	{ "foxharley1",554599358,false },
 	{ "brawler",-1479664699,false },
 	{ "trophytruck",101905590,false },
 	{ "dubsta3",-1237253773,false },
@@ -256,6 +257,16 @@ local vehList = {
 	{ "turismor",408192225,false },
 	{ "tyrus",2067820283,false },
 	{ "vacca",338562499,false },
+	{ "rc",-2049243343,false },
+	{ "zx10r",-714386060,false },
+	{ "foxsupra",16473409,false },
+	{ "tonkat",-2009005332,false },
+	{ "foxshelby",69730216,false },
+	{ "foxevo",-14212258057,false },
+	{ "bobber",-1830458836,false },
+	{ "bobbes2",-1221749859,false },
+	{ "911tbs",-716699448,false },
+	{ "foxsian",182795887,false },
 	{ "visione",-998177792,false },
 	{ "voltic",-1622444098,false },
 	{ "zentorno",-1403128555,false },
@@ -539,7 +550,8 @@ local vehList = {
 	{ "senna",-433961724,false },
 	{ "p1",-189438188,false },
 	{ "flatbed3",2037834373,false },
-	{ "camper",1747439474,false }
+	{ "camper",1747439474,false },
+	{ "senna",-433961724,false }
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- VEHLIST

@@ -1215,9 +1215,19 @@ local spawn = {
 	[640] = { ['x'] = -4.11, ['y'] = -1087.48, ['z'] = 26.68, ['name'] = "Garagem",
 	    [1] = { ['x'] = -14.21, ['y'] = -1080.0, ['z'] = 26.68, ['h'] = 126.80 } 
     },
-	[641] = { ['x'] = 122.8, ['y'] = -2002.74, ['z'] = 18.41, ['name'] = "Garagem",
-		[1] = { ['x'] = 127.86, ['y'] = -873.02, ['z'] = 18.31, ['h'] = 236.02941894531 },
-		[2] = { ['x'] = 127.02, ['y'] = 1994.15, ['z'] = 18.36, ['h'] = 236.02941894531 }
+	[641] = { ['x'] = 1453.74, ['y'] = -1681.22, ['z'] = 66.12, ['name'] = "Garagem",
+		[1] = { ['x'] = 1448.73, ['y'] = -1690.19, ['z'] = 66.38, ['h'] = 89.496391296387 },
+		[2] = { ['x'] = 1455.77, ['y'] = -1689.46, ['z'] = 66.44, ['h'] = 89.49639129638 }
+	},
+	[642] = { ['x'] = -537.13, ['y'] = -886.78, ['z'] = 25.2, ['name'] = "Garagem",
+		[1] = { ['x'] = -531.21, ['y'] = -897.85, ['z'] = 23.87, ['h'] = 71.17505645752 },
+		[2] = { ['x'] = -538.69, ['y'] = -904.87, ['z'] = 23.87, ['h'] = 89.49639129638 }
+	},
+	[643] = { ['x'] = -558.85, ['y'] = -919.65, ['z'] = 23.89, ['name'] = "Weazelnews",
+		[1] = { ['x'] = -550.27, ['y'] = -926.46, ['z'] = 23.87, ['h'] = 251.76312255859 }
+	},
+	[644] = { ['x'] = -568.97, ['y'] = -929.44, ['z'] = 36.84, ['name'] = "WeazelHeli",
+		[1] = { ['x'] = -583.54, ['y'] = -931.29, ['z'] = 36.84, ['h'] = 251.76312255859 }
 	},
 
 
@@ -1676,9 +1686,7 @@ local lscustoms = {
 	{ 1178.41,2651.33,37.80 },
 	{ -199.84,-1322.45,31.13 },
 	{ -211.61,-1324.87,30.9 },
-	{  732.8,-1088.49,22.17 },
-	{  119.55,-1994.84,17.62 },
-    
+	{  732.8,-1088.49,22.17}
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- COLORS
@@ -1707,37 +1715,11 @@ RegisterCommand("colors2",function(source,args)
 			local colors = table.pack(GetVehicleCustomSecondaryColour(GetVehiclePedIsUsing(ped)))
 			local distance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),x,y,z,true)
 			if distance <= 5 then
-				TriggerServerEvent("secondaryColors2",parseInt(args[1]),parseInt(args[2]),parseInt(args[3]),parseInt(colors[1]),parseInt(colors[2]),parseInt(colors[3]))
+				TriggerServerEvent("secondaryColors",parseInt(args[1]),parseInt(args[2]),parseInt(args[3]),parseInt(colors[1]),parseInt(colors[2]),parseInt(colors[3]))
 			end
 		end
 	end
 end)
------------------------------------------------------------------------------------------------------------------------------------------
--- COLORS
------------------------------------------------------------------------------------------------------------------------------------------
---[[ RegisterCommand("carcolors",function(source,args)
-	local ped = PlayerPedId()
-	if IsPedInAnyVehicle(ped) then
-		for _,v in pairs(lscustoms) do
-			local colors = table.pack(GetVehicleCustomPrimaryColour(GetVehiclePedIsUsing(ped)))
-				TriggerServerEvent("primaryColors2",parseInt(args[1]),parseInt(args[2]),parseInt(args[3]),parseInt(colors[1]),parseInt(colors[2]),parseInt(colors[3]))
-			end
-		end
-	end
-end)
------------------------------------------------------------------------------------------------------------------------------------------
--- COLORS2
------------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("carcolors2",function(source,args)
-	local ped = PlayerPedId()
-	if IsPedInAnyVehicle(ped) then
-		for _,v in pairs(lscustoms) do
-			local colors = table.pack(GetVehicleCustomSecondaryColour(GetVehiclePedIsUsing(ped)))
-				TriggerServerEvent("secondaryColors2",parseInt(args[1]),parseInt(args[2]),parseInt(args[3]),parseInt(colors[1]),parseInt(colors[2]),parseInt(colors[3]))
-			end
-		end
-	end
-end)]]
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- syncLock 
 -----------------------------------------------------------------------------------------------------------------------------------------

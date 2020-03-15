@@ -45,7 +45,7 @@ function emP.checkPayment()
 	emP.Quantidade()
 	local source = source
 	local user_id = vRP.getUserId(source)
-	local pagamento = math.random(120,230)*quantidade[source]
+	local pagamento = math.random(250,450)*quantidade[source]
 	if user_id then
 		if vRP.tryGetInventoryItem(user_id,"garrafadeleite",quantidade[source]) then
 			vRP.giveMoney(user_id,pagamento)

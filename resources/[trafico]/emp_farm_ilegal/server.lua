@@ -27,10 +27,10 @@ function emP.checkPayment()
 	if user_id then
 		if vRP.hasPermission(user_id,"mafia.permissao") then
 			local itens = math.random(100)
-			local quantidade = math.random(25,50)
+			local quantidade = math.random(75,80)
 			if itens <= 100 then
 				if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("capsuladebala")*quantidade <= vRP.getInventoryMaxWeight(user_id) then
-					quantidade = math.random(20,50)
+					quantidade = math.random(75,80)
 					vRP.giveInventoryItem(user_id,"capsuladebala",quantidade)
 					TriggerClientEvent("Notify",source,"sucesso","Você coletou <b>"..quantidade.."x Cápsula de Muniçôes.</b>")
 					TriggerClientEvent("vrp_sound:source",source,'coins',0.5)

@@ -34,6 +34,8 @@ RegisterNUICallback("ButtonClick",function(data,cb)
 		TriggerServerEvent("contrabando-comprar","rubberducky")	
 	elseif data == "utilidades-comprar-chavemestra" then
 		TriggerServerEvent("contrabando-comprar","chavemestra")		
+	elseif data == "utilidades-comprar-c4flare" then
+		TriggerServerEvent("contrabando-comprar","c4flare")
 	elseif data == "utilidades-comprar-serra" then
 		TriggerServerEvent("contrabando-comprar","serra")
 	elseif data == "utilidades-comprar-furadeira" then
@@ -51,10 +53,14 @@ RegisterNUICallback("ButtonClick",function(data,cb)
 		TriggerServerEvent("contrabando-vender","pendrive")
 	elseif data == "utilidades-vender-rebite" then
 		TriggerServerEvent("contrabando-vender","rebite")
+	elseif data == "utilidades-vender-placa" then
+		TriggerServerEvent("contrabando-vender","placa")
 	elseif data == "utilidades-vender-rubberducky" then
 		TriggerServerEvent("contrabando-vender","rubberducky")	
 	elseif data == "utilidades-vender-chavemestra" then
 		TriggerServerEvent("contrabando-vender","chavemestra")	
+	elseif data == "utilidades-vender-c4flare" then
+		TriggerServerEvent("contrabando-vender","c4flare")
 	elseif data == "utilidades-vender-serra" then
 		TriggerServerEvent("contrabando-vender","serra")
 	elseif data == "utilidades-vender-furadeira" then
@@ -65,13 +71,13 @@ RegisterNUICallback("ButtonClick",function(data,cb)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
--- LOCAIS 1230.01,-2911.31,9.32
+-- LOCAIS 1229.14,-2911.37,9.31 / 1243.25,1869.41,78.96
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	SetNuiFocus(false,false)
 	while true do
 		Citizen.Wait(1)
-		local distance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),1230.01,-2911.31,9.32,true)
+		local distance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),1229.14,-2911.37,9.31,true)
 		if distance <= 2.0 then
 			if IsControlJustPressed(0,38) then
 				ToggleActionMenu()

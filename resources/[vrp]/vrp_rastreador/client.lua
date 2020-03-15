@@ -16,7 +16,7 @@ local blipColor = 4
 local blipHeading = true
 local blipSprite = 225
 
-local alertSuspect = "Você roubou um veículo rastreado e ele foi desativado remotamente, os Policiais já estão a caminho!"
+local alertSuspect = "Você furtou um veículo com rastreador e ele foi desligado remotamente, os policiais receberam a sua localização."
 local successInstalled = "<b>Rastreador</b> instalado com sucesso!"
 local errorOutOfVehicle = "Você está fora do veículo ou um rastreador já está instalado."
 local errorNoCar = "Veículo não encontrado."

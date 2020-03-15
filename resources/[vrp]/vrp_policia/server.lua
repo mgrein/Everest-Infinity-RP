@@ -250,7 +250,7 @@ RegisterCommand('id',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	-- if vRP.hasPermission(user_id,"polpar.permissao") or vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"policia.permissao") then
 	if args[1] then
-		if vRP.hasPermission(user_id,"polpar.permissao") or vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"policia.permissao") then
+		if vRP.hasPermission(user_id,"polpar.permissao") or vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"policia.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
 			local nplayer = vRP.getUserSource(parseInt(args[1]))
 			if nplayer == nil then
 				TriggerClientEvent("Notify",source,"aviso","Passaporte <b>"..vRP.format(args[1]).."</b> indisponível no momento.")
@@ -260,7 +260,7 @@ RegisterCommand('id',function(source,args,rawCommand)
 			local nuser_id = vRP.getUserId(nplayer)
 
 			local ok = true
-			if vRPclient.getHealth(nplayer) > 100 and not (vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"support.permissao")) then
+			if vRPclient.getHealth(nplayer) > 100 and not (vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao")) then
 				TriggerClientEvent("Notify",source,"importante","Foi solicitado o RG, aguarde o mesmo te mostrar!")
 				ok = vRP.request(nplayer,"Entregar registro de identidade?",15)
 			end
@@ -285,7 +285,7 @@ RegisterCommand('id',function(source,args,rawCommand)
 		local nuser_id = vRP.getUserId(nplayer)
 		
 		local ok = true
-		if vRPclient.getHealth(nplayer) > 100 and not (vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"support.permissao")) then
+		if vRPclient.getHealth(nplayer) > 100 and not (vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao")) then
 			TriggerClientEvent("Notify",source,"importante","Foi solicitado o RG, aguarde o mesmo te mostrar!")
 			ok = vRP.request(nplayer,"Entregar registro de identidade?",15)
 		end
@@ -341,7 +341,7 @@ AddEventHandler("vrp_policia:algemar",function()
 					end)
 				end
 			else
-				if vRP.hasPermission(user_id,"policia.permissao") then
+				if vRP.hasPermission(user_id,"policia.permissao") or vRP.hasPermission(user_id,"admin.permissao") then
 					if vRPclient.isHandcuffed(nplayer) then
 						vRPclient.toggleHandcuff(nplayer)
 						vRPclient._playAnim(source,false,{{"mp_arresting","a_uncuff"}},false)
@@ -404,7 +404,7 @@ RegisterCommand('cuff',function(source,args,rawCommand)
 					end)
 				end
 			else
-				if vRP.hasPermission(user_id,"policia.permissao") then
+				if vRP.hasPermission(user_id,"policia.permissao") or vRP.hasPermission(user_id,"admin.permissao") then
 					if vRPclient.isHandcuffed(nplayer) then
 						vRPclient.toggleHandcuff(nplayer)
 						vRPclient._playAnim(source,false,{{"mp_arresting","a_uncuff"}},false)
@@ -440,7 +440,7 @@ RegisterServerEvent("vrp_policia:carregar")
 AddEventHandler("vrp_policia:carregar",function()
 	local source = source
 	local user_id = vRP.getUserId(source)
-	if vRP.hasPermission(user_id,"polpar.permissao") then
+	if vRP.hasPermission(user_id,"polpar.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
 		local nplayer = vRPclient.getNearestPlayer(source,10)
 		if nplayer then
 			TriggerClientEvent('carregar',nplayer,source)
@@ -476,7 +476,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterCommand('rcapuz',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
-	if vRP.hasPermission(user_id,"polpar.permissao") then
+	if vRP.hasPermission(user_id,"polpar.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
 		local nplayer = vRPclient.getNearestPlayer(source,2)
 		if nplayer then
 			if vRPclient.isCapuz(nplayer) then
@@ -493,7 +493,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterCommand('re',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
-	if vRP.hasPermission(user_id,"polpar.permissao") then
+	if vRP.hasPermission(user_id,"polpar.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
 		local nplayer = vRPclient.getNearestPlayer(source,2)
 		if nplayer then
 			if vRPclient.isInComa(nplayer) then
@@ -763,7 +763,7 @@ RegisterServerEvent('atirando')
 AddEventHandler('atirando',function(x,y,z)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if not vRP.hasPermission(user_id,"policia.permissao") then
+		if not vRP.hasPermission(user_id,"policia.permissao") or vRP.hasPermission(user_id,"admin.permissao") then
 			local policiais = vRP.getUsersByPermission("policia.permissao")
 			for l,w in pairs(policiais) do
 				local player = vRP.getUserSource(w)
@@ -1340,33 +1340,33 @@ end)
 RegisterCommand('a',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if args[1] == "tazer" and vRP.hasPermission(user_id,"admin.permissao") then
+		if args[1] == "tazer" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
 			vRPclient.giveWeapons(source,{["WEAPON_STUNGUN"] = { ammo = 0 }})
-		elseif args[1] == "cassetete" and vRP.hasPermission(user_id,"admin.permissao") then
+		elseif args[1] == "cassetete" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
 			vRPclient.giveWeapons(source,{["WEAPON_NIGHTSTICK"] = { ammo = 0 }})
-		elseif args[1] == "lanterna" and vRP.hasPermission(user_id,"admin.permissao") then
+		elseif args[1] == "lanterna" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
 			vRPclient.giveWeapons(source,{["WEAPON_FLASHLIGHT"] = { ammo = 0 }})
-		elseif args[1] == "extintor" and vRP.hasPermission(user_id,"admin.permissao") then
+		elseif args[1] == "extintor" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
 			vRPclient.giveWeapons(source,{["WEAPON_FIREEXTINGUISHER"] = { ammo = 0 }})
-		elseif args[1] == "glock" and vRP.hasPermission(user_id,"admin.permissao") then
+		elseif args[1] == "glock" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
 			vRPclient.giveWeapons(source,{["WEAPON_COMBATPISTOL"] = { ammo = 100 }})
-		elseif args[1] == "limpar" and vRP.hasPermission(user_id,"admin.permissao") then
+		elseif args[1] == "limpar" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
 			vRPclient.giveWeapons(source,{},true)
 			
-		elseif args[1] == "foguetinho" and vRP.hasPermission(user_id,"admin.permissao") then
+		elseif args[1] == "foguetinho" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
 			vRPclient.giveWeapons(source,{["WEAPON_FIREWORK"] = { ammo = 10 }})
-		elseif args[1] == "flare" and vRP.hasPermission(user_id,"admin.permissao") then
+		elseif args[1] == "flare" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
 			vRPclient.giveWeapons(source,{["WEAPON_FLAREGUN"] = { ammo = 10 }})	
-		elseif args[1] == "bombc4" and vRP.hasPermission(user_id,"admin.permissao") then
+		elseif args[1] == "bombc4" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
 			vRPclient.giveWeapons(source,{["WEAPON_STICKYBOMB"] = { ammo = 5 }})
-		elseif args[1] == "sniper" and vRP.hasPermission(user_id,"admin.permissao") then
+		elseif args[1] == "sniper" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
 			vRPclient.giveWeapons(source,{["WEAPON_SNIPERRIFLE"] = { ammo = 100 }})	
 
-		elseif args[1] == "ak103" and vRP.hasPermission(user_id,"admin.permissao") then
+		elseif args[1] == "ak103" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
 			vRPclient.giveWeapons(source,{["WEAPON_ASSAULTRIFLE"] = { ammo = 250 }})	
-		elseif args[1] == "m4a1" and vRP.hasPermission(user_id,"admin.permissao") then
+		elseif args[1] == "m4a1" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
 			vRPclient.giveWeapons(source,{["WEAPON_CARBINERIFLE"] = { ammo = 250 }})	
-		elseif args[1] == "pump12" and vRP.hasPermission(user_id,"admin.permissao") then
+		elseif args[1] == "pump12" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
 			vRPclient.giveWeapons(source,{["WEAPON_PUMPSHOTGUN"] = { ammo = 150 }})	
 
 		elseif vRP.hasPermission(user_id,"polpar.permissao") then

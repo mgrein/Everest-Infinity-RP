@@ -5,7 +5,7 @@ vRP = Proxy.getInterface("vRP")
 RegisterServerEvent("vrp_legacyfuel:pagamento")
 AddEventHandler("vrp_legacyfuel:pagamento",function(price,galao,vehicle,fuel,fuel2)
 	local user_id = vRP.getUserId(source)
-	if user_id and price > 5 then
+	if user_id and price > 230 then
 		if vRP.tryPayment(user_id,price) then
 			if galao then
 				TriggerClientEvent('vrp_legacyfuel:galao',source)

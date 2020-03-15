@@ -1,6 +1,6 @@
 players = {}
 player = {}
-vehicles = 0.5
+vehicles = 0.2
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(10000)

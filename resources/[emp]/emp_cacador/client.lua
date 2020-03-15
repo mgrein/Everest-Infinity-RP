@@ -37,7 +37,7 @@ Citizen.CreateThread(function()
 						drawTxt("PRESSIONE  ~b~E~w~  PARA RETIRAR CARNE ANIMAL",4,0.5,0.93,0.50,255,255,255,180)
 						if IsControlJustPressed(0,38) then
 							if GetSelectedPedWeapon(ped) == GetHashKey("WEAPON_KNIFE") or GetSelectedPedWeapon(ped) == GetHashKey("WEAPON_DAGGER") or GetSelectedPedWeapon(ped) == GetHashKey("WEAPON_MACHETE") or GetSelectedPedWeapon(ped) == GetHashKey("WEAPON_SWITCHBLADE") or GetSelectedPedWeapon(ped) == GetHashKey("WEAPON_HATCHET") or GetSelectedPedWeapon(ped) == GetHashKey("WEAPON_BATTLEAXE") or GetSelectedPedWeapon(ped) == GetHashKey("WEAPON_STONE_HATCHET") then
-								quantidade = math.random(1,3)
+								quantidade = math.random(1,6)
 								if emP.checkPayment(v.item,quantidade) then
 									selectnpc = npc
 									pedlist[npc] = true

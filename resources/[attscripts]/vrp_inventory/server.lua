@@ -317,10 +317,6 @@ function vRPN.useItem(itemName, type, ramount)
                             TriggerClientEvent('Creative:Update', source,
                                                'updateMochila')
                             TriggerClientEvent('cancelando', source, true)
-                            vRPclient._CarregarObjeto(source,
-                                              "anim@heists@box_carry@",
-                                              "idle_c", "prop_med_bag_01",
-                                              49, 28422)
                             TriggerClientEvent("progress", source, 10000,
                                                "bandagem")
                             SetTimeout(10000, function()

@@ -73,6 +73,7 @@ Citizen.CreateThread(function()
         if IsControlJustPressed(1, KeyOpenClose) then
             hasPhone(function(hasPhone)
                 if hasPhone == true and vRPgc.possuiPhone() then
+                    PlaySound(-1, "Hang_Up", "Phone_SoundSet_Michael", 0, 0, 1)
                     TooglePhone()
                 else
                     ShowNoPhoneWarning()
@@ -83,6 +84,7 @@ Citizen.CreateThread(function()
         if menuIsOpen == true then
             for _, value in ipairs(KeyToucheCloseEvent) do
                 if IsControlJustPressed(1, value.code) then
+                    PlaySound(-1, "CLICK_BACK", "WEB_NAVIGATION_SOUNDS_PHONE", 0, 0, 1)
                     SendNUIMessage({keyUp = value.event})
                 end
             end

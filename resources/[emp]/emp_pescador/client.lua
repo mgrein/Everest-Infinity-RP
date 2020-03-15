@@ -23,9 +23,9 @@ Citizen.CreateThread(function()
 					if IsControlJustPressed(0,38) and not IsPedInAnyVehicle(ped) then
 						if emP.checkPayment() then
 							processo = true
-							segundos = 15
+							segundos = 20
 							if not IsEntityPlayingAnim(ped,"amb@world_human_stand_fishing@idle_a","idle_c",3) then
-								vRP._CarregarObjeto("amb@world_human_stand_fishing@idle_a","idle_c","prop_fishing_rod_01",15,60309)
+								vRP._CarregarObjeto(true,"amb@world_human_stand_fishing@idle_a","idle_c","prop_fishing_rod_01",15,60309)
 							end
 							TriggerEvent('cancelando',true)
 						end

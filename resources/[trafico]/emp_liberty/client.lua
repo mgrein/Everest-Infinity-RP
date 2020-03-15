@@ -10,7 +10,7 @@ local servico = false
 local selecionado = 0
 
 local Coordenadas = {
-	{114.46,-2003.34,18.31},-- LIBERTY
+	{1446.09,-1667.6,66.13},-- LIBERTY
 }
 
 local inicio = 0
@@ -60,7 +60,7 @@ Citizen.CreateThread(function()
 						drawTxt("PRESSIONE  ~b~E~w~  PARA INICIAR COLETA",4,0.5,0.93,0.50,255,255,255,180)
 						if IsControlJustPressed(0,38) and emP.checkPermission() then
 							if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),728.21,-1063.53,22.17,true) <= 1.2 then
-								servico = true	
+								servico = true
 								inicio = 1
 								fim = 11						
 								selecionado = math.random(inicio,fim)

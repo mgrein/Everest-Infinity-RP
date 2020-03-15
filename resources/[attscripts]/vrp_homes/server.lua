@@ -46,179 +46,179 @@ local homes = {
 -----------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------FORTHILLS-----------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------------------
-	["FH01"] = { 5000000,2,1000 },
-	["FH02"] = { 5000000,2,1000 },
-	["FH03"] = { 5000000,2,1000 },
-	["FH04"] = { 5000000,2,1000 },
-	["FH05"] = { 5000000,2,1000 },
-	["FH06"] = { 5000000,2,1000 },
-	["FH07"] = { 5000000,2,1000 },
-	["FH08"] = { 5000000,2,1000 },
-	["FH09"] = { 5000000,2,1000 },
-	["FH10"] = { 5000000,2,1000 },
-	["FH11"] = { 5000000,2,1000 },
-	["FH12"] = { 5000000,2,1000 },
-	["FH13"] = { 5000000,2,1000 },
-	["FH14"] = { 5000000,2,1000 },
-	["FH15"] = { 5000000,2,1000 },
-	["FH16"] = { 5000000,2,1000 },
-	["FH17"] = { 5000000,2,1000 },
-	["FH18"] = { 5000000,2,1000 },
-	["FH19"] = { 5000000,2,1000 },
-	["FH20"] = { 5000000,2,1000 },
-	["FH21"] = { 5000000,2,1000 },
-	["FH22"] = { 5000000,2,1000 },
-	["FH23"] = { 5000000,2,1000 },
-	["FH24"] = { 5000000,2,1000 },
-	["FH25"] = { 5000000,2,1000 },
-	["FH26"] = { 5000000,2,1000 },
-	["FH27"] = { 5000000,2,1000 },
-	["FH28"] = { 5000000,2,1000 },
-	["FH29"] = { 5000000,2,1000 },
-	["FH30"] = { 5000000,2,1000 },
-	["FH31"] = { 5000000,2,1000 },
-	["FH32"] = { 5000000,2,1000 },
-	["FH33"] = { 5000000,2,1000 },
-	["FH34"] = { 5000000,2,1000 },
-	["FH35"] = { 5000000,2,1000 },
-	["FH36"] = { 5000000,2,1000 },
-	["FH37"] = { 5000000,2,1000 },
-	["FH38"] = { 5000000,2,1000 },
-	["FH39"] = { 5000000,2,1000 },
-	["FH40"] = { 5000000,2,1000 },
-	["FH41"] = { 5000000,2,1000 },
-	["FH42"] = { 5000000,2,1000 },
-	["FH43"] = { 5000000,2,1000 },
-	["FH44"] = { 5000000,2,1000 },
-	["FH45"] = { 5000000,2,1000 },
-	["FH46"] = { 5000000,2,1000 },
-	["FH47"] = { 5000000,2,1000 },
-	["FH48"] = { 5000000,2,1000 },
-	["FH49"] = { 5000000,2,1000 },
-	["FH50"] = { 5000000,2,1000 },
-	["FH51"] = { 5000000,2,1000 },
-	["FH52"] = { 5000000,2,1000 },
-	["FH53"] = { 5000000,2,1000 },
-	["FH54"] = { 5000000,2,1000 },
-	["FH55"] = { 5000000,2,1000 },
-	["FH56"] = { 5000000,2,1000 },
-	["FH57"] = { 5000000,2,1000 },
-	["FH58"] = { 5000000,2,1000 },
-	["FH59"] = { 5000000,2,1000 },
-	["FH60"] = { 5000000,2,1000 },
-	["FH61"] = { 5000000,2,1000 },
-	["FH62"] = { 5000000,2,1000 },
-	["FH63"] = { 5000000,2,1000 },
-	["FH64"] = { 5000000,2,1000 },
-	["FH65"] = { 5000000,2,1000 },
-	["FH66"] = { 5000000,2,1000 },
-	["FH67"] = { 5000000,2,1000 },
-	["FH68"] = { 5000000,2,1000 },
-	["FH69"] = { 5000000,2,1000 },
-	["FH70"] = { 5000000,2,1000 },
-	["FH71"] = { 5000000,2,1000 },
-	["FH72"] = { 5000000,2,1000 },
-	["FH73"] = { 5000000,2,1000 },
-	["FH74"] = { 5000000,2,1000 },
-	["FH75"] = { 5000000,2,1000 },
-	["FH76"] = { 5000000,2,1000 },
-	["FH77"] = { 5000000,2,1000 },
-	["FH78"] = { 5000000,2,1000 },
-	["FH79"] = { 5000000,2,1000 },
-	["FH80"] = { 5000000,2,1000 },
-	["FH81"] = { 5000000,2,1000 },
-	["FH82"] = { 5000000,2,1000 },
-	["FH83"] = { 5000000,2,1000 },
-	["FH84"] = { 5000000,2,1000 },
-	["FH85"] = { 5000000,2,1000 },
-	["FH86"] = { 5000000,2,1000 },
-	["FH87"] = { 5000000,2,1000 },
-	["FH88"] = { 5000000,2,1000 },
-	["FH89"] = { 5000000,2,1000 },
-	["FH90"] = { 5000000,2,1000 },
-	["FH91"] = { 5000000,2,1000 },
-	["FH92"] = { 5000000,2,1000 },
-	["FH93"] = { 5000000,2,1000 },
-	["FH94"] = { 5000000,2,1000 },
-	["FH95"] = { 5000000,2,1000 },
-	["FH96"] = { 5000000,2,1000 },
-	["FH97"] = { 5000000,2,1000 },
-	["FH98"] = { 5000000,2,1000 },
-	["FH99"] = { 5000000,2,1000 },
-	["FH100"] = { 5000000,2,1000 },
+	["FH01"] = { 3500000,2,1500 },
+	["FH02"] = { 3500000,2,1500 },
+	["FH03"] = { 3500000,2,1500 },
+	["FH04"] = { 3500000,2,1500 },
+	["FH05"] = { 3500000,2,1500 },
+	["FH06"] = { 3500000,2,1500 },
+	["FH07"] = { 3500000,2,1500 },
+	["FH08"] = { 3500000,2,1500 },
+	["FH09"] = { 3500000,2,1500 },
+	["FH10"] = { 3500000,2,1500 },
+	["FH11"] = { 3500000,2,1500 },
+	["FH12"] = { 3500000,2,1500 },
+	["FH13"] = { 3500000,2,1500 },
+	["FH14"] = { 3500000,2,1500 },
+	["FH15"] = { 3500000,2,1500 },
+	["FH16"] = { 3500000,2,1500 },
+	["FH17"] = { 3500000,2,1500 },
+	["FH18"] = { 3500000,2,1500 },
+	["FH19"] = { 3500000,2,1500 },
+	["FH20"] = { 3500000,2,1500 },
+	["FH21"] = { 3500000,2,1500 },
+	["FH22"] = { 3500000,2,1500 },
+	["FH23"] = { 3500000,2,1500 },
+	["FH24"] = { 3500000,2,1500 },
+	["FH25"] = { 3500000,2,1500 },
+	["FH26"] = { 3500000,2,1500 },
+	["FH27"] = { 3500000,2,1500 },
+	["FH28"] = { 3500000,2,1500 },
+	["FH29"] = { 3500000,2,1500 },
+	["FH30"] = { 3500000,2,1500 },
+	["FH31"] = { 3500000,2,1500 },
+	["FH32"] = { 3500000,2,1500 },
+	["FH33"] = { 3500000,2,1500 },
+	["FH34"] = { 3500000,2,1500 },
+	["FH35"] = { 3500000,2,1500 },
+	["FH36"] = { 3500000,2,1500 },
+	["FH37"] = { 3500000,2,1500 },
+	["FH38"] = { 3500000,2,1500 },
+	["FH39"] = { 3500000,2,1500 },
+	["FH40"] = { 3500000,2,1500 },
+	["FH41"] = { 3500000,2,1500 },
+	["FH42"] = { 3500000,2,1500 },
+	["FH43"] = { 3500000,2,1500 },
+	["FH44"] = { 3500000,2,1500 },
+	["FH45"] = { 3500000,2,1500 },
+	["FH46"] = { 3500000,2,1500 },
+	["FH47"] = { 3500000,2,1500 },
+	["FH48"] = { 3500000,2,1500 },
+	["FH49"] = { 3500000,2,1500 },
+	["FH50"] = { 3500000,2,1500 },
+	["FH51"] = { 3500000,2,1500 },
+	["FH52"] = { 3500000,2,1500 },
+	["FH53"] = { 3500000,2,1500 },
+	["FH54"] = { 3500000,2,1500 },
+	["FH55"] = { 3500000,2,1500 },
+	["FH56"] = { 3500000,2,1500 },
+	["FH57"] = { 3500000,2,1500 },
+	["FH58"] = { 3500000,2,1500 },
+	["FH59"] = { 3500000,2,1500 },
+	["FH60"] = { 3500000,2,1500 },
+	["FH61"] = { 3500000,2,1500 },
+	["FH62"] = { 3500000,2,1500 },
+	["FH63"] = { 3500000,2,1500 },
+	["FH64"] = { 3500000,2,1500 },
+	["FH65"] = { 3500000,2,1500 },
+	["FH66"] = { 3500000,2,1500 },
+	["FH67"] = { 3500000,2,1500 },
+	["FH68"] = { 3500000,2,1500 },
+	["FH69"] = { 3500000,2,1500 },
+	["FH70"] = { 3500000,2,1500 },
+	["FH71"] = { 3500000,2,1500 },
+	["FH72"] = { 3500000,2,1500 },
+	["FH73"] = { 3500000,2,1500 },
+	["FH74"] = { 3500000,2,1500 },
+	["FH75"] = { 3500000,2,1500 },
+	["FH76"] = { 3500000,2,1500 },
+	["FH77"] = { 3500000,2,1500 },
+	["FH78"] = { 3500000,2,1500 },
+	["FH79"] = { 3500000,2,1500 },
+	["FH80"] = { 3500000,2,1500 },
+	["FH81"] = { 3500000,2,1500 },
+	["FH82"] = { 3500000,2,1500 },
+	["FH83"] = { 3500000,2,1500 },
+	["FH84"] = { 3500000,2,1500 },
+	["FH85"] = { 3500000,2,1500 },
+	["FH86"] = { 3500000,2,1500 },
+	["FH87"] = { 3500000,2,1500 },
+	["FH88"] = { 3500000,2,1500 },
+	["FH89"] = { 3500000,2,1500 },
+	["FH90"] = { 3500000,2,1500 },
+	["FH91"] = { 3500000,2,1500 },
+	["FH92"] = { 3500000,2,1500 },
+	["FH93"] = { 3500000,2,1500 },
+	["FH94"] = { 3500000,2,1500 },
+	["FH95"] = { 3500000,2,1500 },
+	["FH96"] = { 3500000,2,1500 },
+	["FH97"] = { 3500000,2,1500 },
+	["FH98"] = { 3500000,2,1500 },
+	["FH99"] = { 3500000,2,1500 },
+	["FH100"] = { 3500000,2,1500 },
 -----------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------LUXURY--------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------------------
-	["LX02"] = { 4500000,2,1000 },
-	["LX01"] = { 4500000,2,1000 },
-	["LX03"] = { 4500000,2,1000 },
-	["LX04"] = { 4500000,2,1000 },
-	["LX05"] = { 4500000,2,1000 },
-	["LX06"] = { 4500000,2,1000 },
-	["LX07"] = { 4500000,2,1000 },
-	["LX08"] = { 4500000,2,1000 },
-	["LX09"] = { 4500000,2,1000 },
-	["LX10"] = { 4500000,2,1000 },
-	["LX11"] = { 4500000,2,1000 },
-	["LX12"] = { 4500000,2,1000 },
-	["LX13"] = { 4500000,2,1000 },
-	["LX14"] = { 4500000,2,1000 },
-	["LX15"] = { 4500000,2,1000 },
-	["LX16"] = { 4500000,2,1000 },
-	["LX17"] = { 4500000,2,1000 },
-	["LX18"] = { 4500000,2,1000 },
-	["LX19"] = { 4500000,2,1000 },
-	["LX20"] = { 4500000,2,1000 },
-	["LX21"] = { 4500000,2,1000 },
-	["LX22"] = { 4500000,2,1000 },
-	["LX23"] = { 4500000,2,1000 },
-	["LX24"] = { 4500000,2,1000 },
-	["LX25"] = { 4500000,2,1000 },
-	["LX26"] = { 4500000,2,1000 },
-	["LX27"] = { 4500000,2,1000 },
-	["LX28"] = { 4500000,2,1000 },
-	["LX29"] = { 4500000,2,1000 },
-	["LX30"] = { 4500000,2,1000 },
-	["LX31"] = { 4500000,2,1000 },
-	["LX32"] = { 4500000,2,1000 },
-	["LX33"] = { 4500000,2,1000 },
-	["LX34"] = { 4500000,2,1000 },
-	["LX35"] = { 4500000,2,1000 },
-	["LX36"] = { 4500000,2,1000 },
-	["LX37"] = { 4500000,2,1000 },
-	["LX38"] = { 4500000,2,1000 },
-	["LX39"] = { 4500000,2,1000 },
-	["LX40"] = { 4500000,2,1000 },
-	["LX41"] = { 4500000,2,1000 },
-	["LX42"] = { 4500000,2,1000 },
-	["LX43"] = { 4500000,2,1000 },
-	["LX44"] = { 4500000,2,1000 },
-	["LX45"] = { 4500000,2,1000 },
-	["LX46"] = { 4500000,2,1000 },
-	["LX47"] = { 4500000,2,1000 },
-	["LX48"] = { 4500000,2,1000 },
-	["LX49"] = { 4500000,2,1000 },
-	["LX50"] = { 4500000,2,1000 },
-	["LX51"] = { 4500000,2,1000 },
-	["LX52"] = { 4500000,2,1000 },
-	["LX53"] = { 4500000,2,1000 },
-	["LX54"] = { 4500000,2,1000 },
-	["LX55"] = { 4500000,2,1000 },
-	["LX56"] = { 4500000,2,1000 },
-	["LX57"] = { 4500000,2,1000 },
-	["LX58"] = { 4500000,2,1000 },
-	["LX59"] = { 4500000,2,1000 },
-	["LX60"] = { 4500000,2,1000 },
-	["LX61"] = { 4500000,2,1000 },
-	["LX62"] = { 4500000,2,1000 },
-	["LX63"] = { 4500000,2,1000 },
-	["LX64"] = { 4500000,2,1000 },
-	["LX65"] = { 4500000,2,1000 },
-	["LX66"] = { 4500000,2,1000 },
-	["LX67"] = { 4500000,2,1000 },
-	["LX68"] = { 4500000,2,1000 },
-	["LX69"] = { 4500000,2,1000 },
-	["LX70"] = { 4500000,2,1000 },	
+	["LX02"] = { 1500000,2,1000 },
+	["LX01"] = { 1500000,2,1000 },
+	["LX03"] = { 1500000,2,1000 },
+	["LX04"] = { 1500000,2,1000 },
+	["LX05"] = { 1500000,2,1000 },
+	["LX06"] = { 1500000,2,1000 },
+	["LX07"] = { 1500000,2,1000 },
+	["LX08"] = { 1500000,2,1000 },
+	["LX09"] = { 1500000,2,1000 },
+	["LX10"] = { 1500000,2,1000 },
+	["LX11"] = { 1500000,2,1000 },
+	["LX12"] = { 1500000,2,1000 },
+	["LX13"] = { 1500000,2,1000 },
+	["LX14"] = { 1500000,2,1000 },
+	["LX15"] = { 1500000,2,1000 },
+	["LX16"] = { 1500000,2,1000 },
+	["LX17"] = { 1500000,2,1000 },
+	["LX18"] = { 1500000,2,1000 },
+	["LX19"] = { 1500000,2,1000 },
+	["LX20"] = { 1500000,2,1000 },
+	["LX21"] = { 1500000,2,1000 },
+	["LX22"] = { 1500000,2,1000 },
+	["LX23"] = { 1500000,2,1000 },
+	["LX24"] = { 1500000,2,1000 },
+	["LX25"] = { 1500000,2,1000 },
+	["LX26"] = { 1500000,2,1000 },
+	["LX27"] = { 1500000,2,1000 },
+	["LX28"] = { 1500000,2,1000 },
+	["LX29"] = { 1500000,2,1000 },
+	["LX30"] = { 1500000,2,1000 },
+	["LX31"] = { 1500000,2,1000 },
+	["LX32"] = { 1500000,2,1000 },
+	["LX33"] = { 1500000,2,1000 },
+	["LX34"] = { 1500000,2,1000 },
+	["LX35"] = { 1500000,2,1000 },
+	["LX36"] = { 1500000,2,1000 },
+	["LX37"] = { 1500000,2,1000 },
+	["LX38"] = { 1500000,2,1000 },
+	["LX39"] = { 1500000,2,1000 },
+	["LX40"] = { 1500000,2,1000 },
+	["LX41"] = { 1500000,2,1000 },
+	["LX42"] = { 1500000,2,1000 },
+	["LX43"] = { 1500000,2,1000 },
+	["LX44"] = { 1500000,2,1000 },
+	["LX45"] = { 1500000,2,1000 },
+	["LX46"] = { 1500000,2,1000 },
+	["LX47"] = { 1500000,2,1000 },
+	["LX48"] = { 1500000,2,1000 },
+	["LX49"] = { 1500000,2,1000 },
+	["LX50"] = { 1500000,2,1000 },
+	["LX51"] = { 1500000,2,1000 },
+	["LX52"] = { 1500000,2,1000 },
+	["LX53"] = { 1500000,2,1000 },
+	["LX54"] = { 1500000,2,1000 },
+	["LX55"] = { 1500000,2,1000 },
+	["LX56"] = { 1500000,2,1000 },
+	["LX57"] = { 1500000,2,1000 },
+	["LX58"] = { 1500000,2,1000 },
+	["LX59"] = { 1500000,2,1000 },
+	["LX60"] = { 1500000,2,1000 },
+	["LX61"] = { 1500000,2,1000 },
+	["LX62"] = { 1500000,2,1000 },
+	["LX63"] = { 1500000,2,1000 },
+	["LX64"] = { 1500000,2,1000 },
+	["LX65"] = { 1500000,2,1000 },
+	["LX66"] = { 1500000,2,1000 },
+	["LX67"] = { 1500000,2,1000 },
+	["LX68"] = { 1500000,2,1000 },
+	["LX69"] = { 1500000,2,1000 },
+	["LX70"] = { 1500000,2,1000 },	
 -----------------------------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------SAMIR-------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -554,15 +554,15 @@ local homes = {
 -----------------------------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------MANSAO------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------------------
-	["MS01"] = { 10000000,4,3000 },
-	["MS02"] = { 10000000,4,3000},
-	["MS03"] = { 10000000,4,3000 },
-	["MS04"] = { 10000000,4,3000 },
-	["MS05"] = { 10000000,4,3000 },
-	["MS06"] = { 10000000,4,3000 },
-	["MS07"] = { 10000000,4,3000 },
-	["MS08"] = { 10000000,4,3000 },
-	["MS09"] = { 10000000,4,3000 },
+	["MS01"] = { 3000000,4,1500 },
+	["MS02"] = { 3000000,4,1500},
+	["MS03"] = { 3000000,4,1500 },
+	["MS04"] = { 3000000,4,1500 },
+	["MS05"] = { 3000000,4,1500 },
+	["MS06"] = { 3000000,4,1500 },
+	["MS07"] = { 3000000,4,1500 },
+	["MS08"] = { 3000000,4,1500 },
+	["MS09"] = { 3000000,4,1500 },
 	-----------------------------------------------------------------------------------------------------------------------------------------
 	----------------------------------------------------------MOTELPRAIA---------------------------------------------------------------------
 	-----------------------------------------------------------------------------------------------------------------------------------------
@@ -719,14 +719,14 @@ RegisterCommand('homes',function(source,args,rawCommand)
 					for k,v in pairs(userHomes) do
 						if v.user_id ~= user_id then
 							local identity = vRP.getUserIdentity(v.user_id)
-							permissoes = permissoes.."<b>Nome:</b> "..identity.name.." "..identity.firstname.." - <b>Passaporte:</b> "..v.user_id
+							permissoes = permissoes.."<b>Nome:</b> "..identity.name.." "..identity.firstname.."   -   <b>Passaporte:</b> "..v.user_id
 							if k ~= #userHomes then
 								permissoes = permissoes.."<br>"
 							end
 						end
 						Citizen.Wait(10)
 					end
-					TriggerClientEvent("Notify",source,"importante","Permissões da residência <b>"..tostring(args[2]).."</b>: <br>"..permissoes,20000)
+					TriggerClientEvent("Notify",source,"negado","Permissões da residência <b>"..tostring(args[2]).."</b>: <br>"..permissoes,20000)
 				else
 					TriggerClientEvent("Notify",source,"negado","Nenhuma permissão encontrada.",20000)
 				end
@@ -736,7 +736,7 @@ RegisterCommand('homes',function(source,args,rawCommand)
 			if myHomes[1] then
 				local identity = vRP.getUserIdentity(parseInt(args[3]))
 				if identity then
-					local ok = vRP.request(source,"Transferir a residência <b>"..tostring(args[2]).."</b> para <b>"..identity.name.." "..identity.firstname.."</b> ?",30)
+					local ok = vRP.request(source,"Transferir a residência <b>"..tostring(args[2]).."</b> para <b>"..identity.name.." "..identity.firstname.."</b>?",30)
 					if ok then
 						vRP.execute("homes/rem_allpermissions",{ home = tostring(args[2]) })
 						vRP.execute("homes/buy_permissions",{ home = tostring(args[2]), user_id = parseInt(args[3]), tax = parseInt(myHomes[1].tax) })
@@ -747,20 +747,13 @@ RegisterCommand('homes',function(source,args,rawCommand)
 		elseif args[1] == "tax" and homes[tostring(args[2])] then
 			local ownerHomes = vRP.query("homes/get_homeuseridowner",{ home = tostring(args[2]) })
 			if ownerHomes[1] then
-				--if not vRP.hasGroup(user_id,"Platina") then
-					local house_price = parseInt(homes[tostring(args[2])][1])
-					local house_tax = 0.10
-					if house_price >= 7000000 then
-						house_tax = 0.00
-					end
-					if vRP.tryFullPayment(user_id,parseInt(house_price * house_tax)) then
-						vRP.execute("homes/rem_permissions",{ home = tostring(args[2]), user_id = parseInt(ownerHomes[1].user_id) })
-						vRP.execute("homes/buy_permissions",{ home = tostring(args[2]), user_id = parseInt(ownerHomes[1].user_id), tax = parseInt(os.time()) })
-						TriggerClientEvent("Notify",source,"sucesso","Pagamento de <b>$"..vRP.format(parseInt(house_price * house_tax)).." dólares</b> efetuado com sucesso.",10000)
-					else
-						TriggerClientEvent("Notify",source,"negado","Dinheiro insuficiente.",10000)
-					end
-				--end
+				if vRP.tryFullPayment(user_id,parseInt(homes[tostring(args[2])][1]*0.10)) then
+					vRP.execute("homes/rem_permissions",{ home = tostring(args[2]), user_id = parseInt(ownerHomes[1].user_id) })
+					vRP.execute("homes/buy_permissions",{ home = tostring(args[2]), user_id = parseInt(ownerHomes[1].user_id), tax = parseInt(os.time()) })
+					TriggerClientEvent("Notify",source,"sucesso","Pagamento de <b>$"..vRP.format(parseInt(homes[tostring(args[2])][1]*0.1)).." reais</b> efetuado com sucesso.",10000)
+				else
+					TriggerClientEvent("Notify",source,"negado","Dinheiro insuficiente.",10000)
+				end
 			end
 		else
 			local myHomes = vRP.query("homes/get_homeuserid",{ user_id = parseInt(user_id) })
@@ -770,9 +763,7 @@ RegisterCommand('homes',function(source,args,rawCommand)
 					if ownerHomes[1] then
 						local house_price = parseInt(homes[tostring(v.home)][1])
 						local house_tax = 0.10
-						if house_price >= 7000000 then
-							house_tax = 0.00
-						end
+					
 
 						if parseInt(os.time()) >= parseInt(ownerHomes[1].tax+24*15*60*60) then
 							TriggerClientEvent("Notify",source,"negado","<b>Residência:</b> "..v.home.."<br><b>Property Tax:</b> Atrasado<br>Valor: <b>$"..vRP.format(parseInt(house_price * house_tax)).." dólares</b>",20000)
@@ -834,11 +825,6 @@ function src.checkPermissions(homeName)
 					local myResult = vRP.query("homes/get_homeuser",{ user_id = parseInt(user_id), home = tostring(homeName) })
 					local resultOwner = vRP.query("homes/get_homeuseridowner",{ home = tostring(homeName) })
 					if myResult[1] then
-
-						if homes[homeName][1] >= 7000000 then
-							return true
-						end
-
 						if parseInt(os.time()) >= parseInt(resultOwner[1].tax+24*18*60*60) then
 
 							local cows = vRP.getSData("chest:"..tostring(homeName))
@@ -857,7 +843,7 @@ function src.checkPermissions(homeName)
 							return false
 						end
 					else
-						if parseInt(os.time()) >= parseInt(resultOwner[1].tax+24*18*60*60) and homes[homeName][1] < 5000000 then
+						if parseInt(os.time()) >= parseInt(resultOwner[1].tax+24*18*60*60) then
 
 							local cows = vRP.getSData("chest:"..tostring(homeName))
 							local rows = json.decode(cows) or {}
@@ -869,7 +855,7 @@ function src.checkPermissions(homeName)
 							return false
 						end
 
-						if parseInt(os.time()) >= parseInt(resultOwner[1].tax+24*15*60*60) and homes[homeName][1] < 5000000 then
+						if parseInt(os.time()) >= parseInt(resultOwner[1].tax+24*15*60*60) then
 							TriggerClientEvent("Notify",source,"aviso","A <b>Property Tax</b> da residência está atrasada.",10000)
 							return false
 						end
@@ -891,7 +877,7 @@ function src.checkPermissions(homeName)
 						end
 					end
 				else
-					local ok = vRP.request(source,"Deseja efetuar a compra da residência <b>"..tostring(homeName).."</b> por <b>$"..vRP.format(parseInt(homes[tostring(homeName)][1])).."</b> ?",30)
+					local ok = vRP.request(source,"Deseja efetuar a compra da residência <b>"..tostring(homeName).."</b> por <b>$"..vRP.format(parseInt(homes[tostring(homeName)][1])).."</b>?",30)
 					if ok then
 						if vRP.tryFullPayment(user_id,parseInt(homes[tostring(homeName)][1])) then
 							vRP.execute("homes/buy_permissions",{ home = tostring(homeName), user_id = parseInt(user_id), tax = parseInt(os.time()) })
@@ -907,6 +893,7 @@ function src.checkPermissions(homeName)
 	end
 	return false
 end
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CHECKINTPERMISSIONS
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -1007,9 +994,8 @@ function src.storeItem(homeName,itemName,amount)
 	local source = source
 	if itemName then
 		local user_id = vRP.getUserId(source)
-		local identity = vRP.getUserIdentity(user_id)
 		if user_id and actived[parseInt(user_id)] == 0 or not actived[parseInt(user_id)] then
-			if string.match(itemName,"identidade") then
+			if string.match(itemName,"identidade") or string.match(itemName,"xtudo")  or string.match(itemName,"pipoca") or string.match(itemName,"donut")  or string.match(itemName,"hotdog") or string.match(itemName,"sanduiche") or string.match(itemName,"batatafrita") or  string.match(itemName,"taco") or string.match(itemName,"chocolate") or string.match(itemName,"macarrao") or string.match(itemName,"churrasco")  or string.match(itemName,"agua")  or string.match(itemName,"fanta")  or string.match(itemName,"cocacola")   or string.match(itemName,"milkshake")  or string.match(itemName,"cafe") then
 				TriggerClientEvent("Notify",source,"importante","Não pode guardar este item.",8000)
 				return
 			end
@@ -1021,7 +1007,6 @@ function src.storeItem(homeName,itemName,amount)
 					local new_weight = vRP.computeItemsWeight(items)+vRP.getItemWeight(itemName)*parseInt(amount)
 					if new_weight <= parseInt(homes[tostring(homeName)][3]) then
 						if vRP.tryGetInventoryItem(parseInt(user_id),itemName,parseInt(amount)) then
-							SendWebhookMessage(webhookbaucasas,"```prolog\n[ID]: "..user_id.." "..identity.name.." "..identity.firstname.." \n[GUARDOU]: "..vRP.format(parseInt(amount)).." "..vRP.itemNameList(itemName).." \n[BAU]: "..(tostring(homeName)).." "..os.date("\n[Data]: %d/%m/%Y [Hora]: %H:%M:%S").." \r```")
 							if items[itemName] ~= nil then
 								items[itemName].amount = parseInt(items[itemName].amount) + parseInt(amount)
 							else
@@ -1044,7 +1029,6 @@ function src.storeItem(homeName,itemName,amount)
 									else
 										items[itemName] = { amount = parseInt(v.amount) }
 									end
-									SendWebhookMessage(webhookbaucasas,"```prolog\n[ID]: "..user_id.." "..identity.name.." "..identity.firstname.." \n[GUARDOU]: "..vRP.format(parseInt(v.amount)).." "..vRP.itemNameList(itemName).." \n[BAU]: "..(tostring(homeName)).." "..os.date("\n[Data]: %d/%m/%Y [Hora]: %H:%M:%S").." \r```")
 									actived[parseInt(user_id)] = 2
 								end
 							else
@@ -1067,7 +1051,6 @@ function src.takeItem(homeName,itemName,amount)
 	local source = source
 	if itemName then
 		local user_id = vRP.getUserId(source)
-		local identity = vRP.getUserIdentity(user_id)
 		if user_id and actived[parseInt(user_id)] == 0 or not actived[parseInt(user_id)] then
 			local data = vRP.getSData("chest:"..tostring(homeName))
 			local items = json.decode(data) or {}
@@ -1075,9 +1058,9 @@ function src.takeItem(homeName,itemName,amount)
 				if parseInt(amount) > 0 then
 					if items[itemName] ~= nil and parseInt(items[itemName].amount) >= parseInt(amount) then
 						if vRP.getInventoryWeight(parseInt(user_id))+vRP.getItemWeight(itemName)*parseInt(amount) <= vRP.getInventoryMaxWeight(parseInt(user_id)) then
-							SendWebhookMessage(webhookbaucasas,"```prolog\n[ID]: "..user_id.." "..identity.name.." "..identity.firstname.." \n[RETIROU]: "..vRP.format(parseInt(amount)).." "..vRP.itemNameList(itemName).." \n[BAU]: "..(tostring(homeName)).." "..os.date("\n[Data]: %d/%m/%Y [Hora]: %H:%M:%S").." \r```")
 							vRP.giveInventoryItem(parseInt(user_id),itemName,parseInt(amount))
 							items[itemName].amount = parseInt(items[itemName].amount) - parseInt(amount)
+
 							if parseInt(items[itemName].amount) <= 0 then
 								items[itemName] = nil
 							end
@@ -1089,7 +1072,6 @@ function src.takeItem(homeName,itemName,amount)
 				else
 					if items[itemName] ~= nil and parseInt(items[itemName].amount) >= parseInt(amount) then
 						if vRP.getInventoryWeight(parseInt(user_id))+vRP.getItemWeight(itemName)*parseInt(items[itemName].amount) <= vRP.getInventoryMaxWeight(parseInt(user_id)) then
-							SendWebhookMessage(webhookbaucasas,"```prolog\n[ID]: "..user_id.." "..identity.name.." "..identity.firstname.." \n[RETIROU]: "..vRP.format(parseInt(items[itemName].amount)).." "..vRP.itemNameList(itemName).." \n[BAU]: "..(tostring(homeName)).." "..os.date("\n[Data]: %d/%m/%Y [Hora]: %H:%M:%S").." \r```")
 							vRP.giveInventoryItem(parseInt(user_id),itemName,parseInt(items[itemName].amount))
 							items[itemName] = nil
 							actived[parseInt(user_id)] = 2

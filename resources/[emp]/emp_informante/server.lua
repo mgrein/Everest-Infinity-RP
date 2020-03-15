@@ -11,12 +11,14 @@ function emP.informantCheck()
 	local user_id = vRP.getUserId(source)
 	local policia = vRP.getUsersByPermission("policia.permissao")
 	if user_id then
-		if vRP.tryGetInventoryItem(user_id,"contatoinformante",1) then
+		  if vRP.tryGetInventoryItem(user_id,"contatoinformante",1) then
+	        vRP.tryFullPayment(user_id,5000) 
+			TriggerClientEvent("Notify",source,"sucesso","Você utilizou o seu <b>Contato do Informante e pagou 5.000 Dolares.</b>",8000)
 			TriggerClientEvent("Notify",source,"sucesso","Você utilizou o seu <b>Contato do Informante</b> para saber a quantidade de Policiais em serviço.",8000)
 			TriggerClientEvent("Notify",source,"importante","Policiais em serviço: "..#policia,8000)
 			return true
 		else
-			TriggerClientEvent("Notify",source,"negado","Você não possui o Contato de um <b>informante</b>, consiga ele vendendo drogas.",8000)
+			TriggerClientEvent("Notify",source,"negado","Você não possui o Contato de um <b>informante</b> ou não tem dinheiro suficente, consiga ele vendendo drogas.",8000)
 		end
 	end
 end
