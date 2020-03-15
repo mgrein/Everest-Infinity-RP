@@ -1340,33 +1340,35 @@ end)
 RegisterCommand('a',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if args[1] == "tazer" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
+		if args[1] == "tazer" and vRP.hasPermission(user_id,"polpar.permissao")  then
 			vRPclient.giveWeapons(source,{["WEAPON_STUNGUN"] = { ammo = 0 }})
-		elseif args[1] == "cassetete" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
+		elseif args[1] == "cassetete" and vRP.hasPermission(user_id,"polpar.permissao")  then
 			vRPclient.giveWeapons(source,{["WEAPON_NIGHTSTICK"] = { ammo = 0 }})
-		elseif args[1] == "lanterna" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
+		elseif args[1] == "lanterna" and vRP.hasPermission(user_id,"polpar.permissao")  then
 			vRPclient.giveWeapons(source,{["WEAPON_FLASHLIGHT"] = { ammo = 0 }})
-		elseif args[1] == "extintor" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
+		elseif args[1] == "extintor" and vRP.hasPermission(user_id,"polpar.permissao")  then
 			vRPclient.giveWeapons(source,{["WEAPON_FIREEXTINGUISHER"] = { ammo = 0 }})
-		elseif args[1] == "glock" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
+		elseif args[1] == "glock" and vRP.hasPermission(user_id,"polpar.permissao")  then
 			vRPclient.giveWeapons(source,{["WEAPON_COMBATPISTOL"] = { ammo = 100 }})
-		elseif args[1] == "limpar" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
+		elseif args[1] == "limpar" and vRP.hasPermission(user_id,"polpar.permissao")  then
 			vRPclient.giveWeapons(source,{},true)
-			
-		elseif args[1] == "foguetinho" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
+
+		elseif args[1] == "raypistol" and vRP.hasPermission(user_id,"polpar.permissao")  then
+			vRPclient.giveWeapons(source,{["WEAPON_RAYPISTOL"] = { ammo = 0 }})
+		elseif args[1] == "foguetinho" and vRP.hasPermission(user_id,"polpar.permissao")  then
 			vRPclient.giveWeapons(source,{["WEAPON_FIREWORK"] = { ammo = 10 }})
-		elseif args[1] == "flare" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
+		elseif args[1] == "flare" and vRP.hasPermission(user_id,"polpar.permissao")  then
 			vRPclient.giveWeapons(source,{["WEAPON_FLAREGUN"] = { ammo = 10 }})	
-		elseif args[1] == "bombc4" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
+		elseif args[1] == "bombc4" and vRP.hasPermission(user_id,"polpar.permissao")  then
 			vRPclient.giveWeapons(source,{["WEAPON_STICKYBOMB"] = { ammo = 5 }})
-		elseif args[1] == "sniper" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
+		elseif args[1] == "sniper" and vRP.hasPermission(user_id,"polpar.permissao")  then
 			vRPclient.giveWeapons(source,{["WEAPON_SNIPERRIFLE"] = { ammo = 100 }})	
 
-		elseif args[1] == "ak103" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
+		elseif args[1] == "ak103" and vRP.hasPermission(user_id,"polpar.permissao")  then
 			vRPclient.giveWeapons(source,{["WEAPON_ASSAULTRIFLE"] = { ammo = 250 }})	
-		elseif args[1] == "m4a1" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
+		elseif args[1] == "m4a1" and vRP.hasPermission(user_id,"polpar.permissao")  then
 			vRPclient.giveWeapons(source,{["WEAPON_CARBINERIFLE"] = { ammo = 250 }})	
-		elseif args[1] == "pump12" and vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"moderador.permissao") then
+		elseif args[1] == "pump12" and vRP.hasPermission(user_id,"polpar.permissao")  then
 			vRPclient.giveWeapons(source,{["WEAPON_PUMPSHOTGUN"] = { ammo = 150 }})	
 
 		elseif vRP.hasPermission(user_id,"polpar.permissao") then
