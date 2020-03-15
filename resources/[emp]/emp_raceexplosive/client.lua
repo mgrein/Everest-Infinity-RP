@@ -1,6 +1,8 @@
 local Tunnel = module("vrp","lib/Tunnel")
 local Proxy = module("vrp","lib/Proxy")
-emP = Tunnel.getInterface("emp_race")
+vRP = Proxy.getInterface("vRP")
+vRPserver = Tunnel.getInterface("vRP")
+emP = Tunnel.getInterface("emp_raceexplosive")
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- VARIAVEIS
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -19,7 +21,7 @@ local explosive = 0
 -- VARIAVEIS
 -----------------------------------------------------------------------------------------------------------------------------------------
 local races = {
-	--[[1] = {
+		[1] = {
 		    ['time'] = 200,
             [1] = { ['x'] = 1959.94, ['y'] = 3131.52, ['z'] = 46.3 },
             [2] = { ['x'] = 2568.52, ['y'] = 3049.28, ['z'] = 43.67 },
@@ -184,8 +186,8 @@ local races = {
 		   [26] = { ['x'] = 316.6, ['y'] = -178.86, ['z'] = 56.96 },
 		   [27] = { ['x'] = 191.54, ['y'] = 60.81, ['z'] = 82.93 },
 		   [28] = { ['x'] = 68.13, ['y'] = 125.12, ['z'] = 78.51 }
-	},	]] 
-	[1] = {
+	},	 
+	[6] = {
 		   ['time'] = 400,
 		   [1] = { ['x'] = 1915.51, ['y'] = 3314.56, ['z'] = 43.86 },
 		   [2] = { ['x'] = 2238.54, ['y'] = 3259.84, ['z'] = 47.32 },
@@ -214,7 +216,7 @@ local races = {
 		   [25] = { ['x'] = -1739.83, ['y'] = 2884.49, ['z'] = 32.14 },
 		   [26] = { ['x'] = -1944.65, ['y'] = 2813.5, ['z'] = 32.12 }
 	},
-	[2] = {
+	[7] = {
 		   ['time'] = 400,
 		   [1] = { ['x'] = 1879.47, ['y'] = 3204.98, ['z'] = 45.0 },
 		   [2] = { ['x'] = 2422.19, ['y'] = 2888.17, ['z'] = 48.59 },
@@ -242,16 +244,15 @@ local races = {
 		   [24] = { ['x'] = 797.99, ['y'] = -3045.59, ['z'] = 5.07 },
 		   [25] = { ['x'] = 1192.89, ['y'] = -2993.65, ['z'] = 5.23 },
 		   [26] = { ['x'] = 869.35, ['y'] = -2913.37, ['z'] = 5.23 },
-		   [27] = { ['x'] = 628.45, ['y'] = -2889.92, ['z'] = 5.38 }
-			
+		   [27] = { ['x'] = 628.45, ['y'] = -2889.92, ['z'] = 5.38 },
 	}
 }
-------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
 -- STARTRACES
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		Citizen.Wait(5)
 		if not inrace then
 			local ped = PlayerPedId()
 			local vehicle = GetVehiclePedIsUsing(ped)
@@ -259,37 +260,39 @@ Citizen.CreateThread(function()
 			local bowz,cdz = GetGroundZFor_3dCoord(CoordenadaX,CoordenadaY,CoordenadaZ)
 			local distance = GetDistanceBetweenCoords(CoordenadaX,CoordenadaY,cdz,x,y,z,true)
 
-			if distance <= 50.0 then
+			if distance <= 30.0 then
 				if IsEntityAVehicle(vehicle) and GetVehicleClass(vehicle) ~= 8 and GetPedInVehicleSeat(vehicle,-1) == ped then
 					DrawMarker(23,CoordenadaX,CoordenadaY,CoordenadaZ-0.96,0,0,0,0,0,0,10.0,10.0,1.0,255,0,0,50,0,0,0,0)
-					if distance <= 10.9 then
-						drawTxt("PRESSIONE  ~r~E~w~  PARA INICIAR A CORRIDA",6,0.5,0.87,0.50,255,255,255,180)
-						if IsControlJustPressed(0,38) and emP.ticketCheck() then
-							 inrace = true
-							 racepos = 1
-							 racepoint = emP.getRacepoint()
-							 timerace = races[racepoint].time
-							 CriandoBlip(races,racepoint,racepos)
-							 explosive = math.random(100)
-							 if explosive >= 70 then
-							 	emP.startBombRace()
-							 	bomba = CreateObject(GetHashKey("prop_c4_final_green"),x,y,z,true,true,true)
-							 	AttachEntityToEntity(bomba,vehicle,GetEntityBoneIndexByName(vehicle,"exhaust"),0.0,0.0,0.0,180.0,-90.0,180.0,false,false,false,true,2,true)
-							 	TriggerEvent("Notify","evento","Você começou uma corrida <b>Explosiva</b>, não saia do veículo e termine<br>no tempo estimado, ou então sei veículo vai explodir com você dentro.")
+					if distance <= 5.9 then
+						drawTxt("PRESSIONE  ~r~E~w~  PARA INICIAR A CORRIDA",4,0.5,0.93,0.50,255,255,255,180)
+						if IsControlJustPressed(0,38) and  emP.ticketCheck() 	then
+							emP.setSearchTimer()
+							inrace = true
+							racepos = 1
+							racepoint = emP.getRacepoint()
+							timerace = races[racepoint].time
+							CriandoBlip(races,racepoint,racepos)
+							explosive = math.random(100)
+							if explosive >= 70 then
+								emP.startBombRace()
+								bomba = CreateObject(GetHashKey("prop_c4_final_green"),x,y,z,true,true,true)
+								AttachEntityToEntity(bomba,vehicle,GetEntityBoneIndexByName(vehicle,"exhaust"),0.0,0.0,0.0,180.0,-90.0,180.0,false,false,false,true,2,true)
+								PlaySoundFrontend(-1,"Oneshot_Final","MP_MISSION_COUNTDOWN_SOUNDSET",false)
+								TriggerEvent("Notify","negado","Você começou uma corrida <b>Explosiva</b>, não saia do veículo e termine no tempo estimado, ou então seu veículo vai explodir com você dentro.",8000)
+								end
 							end
 						end
 					end
 				end
 			end
 		end
-	end
-end)
+	end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CHECKPOINTS
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		Citizen.Wait(5)
 		if inrace then
 			local ped = PlayerPedId()
 			local vehicle = GetVehiclePedIsUsing(ped)
@@ -306,7 +309,7 @@ Citizen.CreateThread(function()
 						if racepos == #races[racepoint] then
 							inrace = false
 							PlaySoundFrontend(-1,"RACE_PLACED","HUD_AWARDS",false)
-							if explosive >= 40 then
+							if explosive >= 70 then
 								explosive = 0
 								DeleteObject(bomba)
 								emP.removeBombRace()
@@ -329,10 +332,10 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		Citizen.Wait(5)
 		if inrace and timerace > 0 and GetVehiclePedIsUsing(PlayerPedId()) then
-			drawTxt("RESTAM ~r~"..timerace.." SEGUNDOS ~w~PARA CHEGAR AO DESTINO FINAL DA CORRIDA",6,0.4,0.87,0.45,255,255,255,180)
-			drawTxt("VENÇA A CORRIDA E SUPERE SEUS PROPRIOS RECORDES ANTES DO TEMPO ACABAR",6,0.4,0.85,0.40,255,255,255,180)
+			drawTxt("RESTAM ~g~"..timerace.." SEGUNDOS ~w~PARA CHEGAR AO DESTINO FINAL DA CORRIDA",4,0.5,0.905,0.45,255,255,255,100)
+			drawTxt("VENÇA A CORRIDA E SUPERE SEUS PROPRIOS RECORDES ANTES DO TEMPO ACABAR",4,0.5,0.93,0.38,255,255,255,50)
 		end
 	end
 end)
@@ -347,7 +350,7 @@ Citizen.CreateThread(function()
 			if timerace <= 0 or not IsPedInAnyVehicle(PlayerPedId()) then
 				inrace = false
 				RemoveBlip(blips)
-				if explosive >= 40 then
+				if explosive >= 70 then
 					SetTimeout(3000,function()
 						explosive = 0
 						DeleteObject(bomba)
@@ -357,6 +360,20 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
+	end
+end)
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- REMOVEBOMB
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterNetEvent("emp_race:unbomb")
+AddEventHandler("emp_race:unbomb",function()
+	inrace = false
+	RemoveBlip(blips)
+	if explosive >= 70 then
+		explosive = 0
+		DeleteObject(bomba)
+		emP.removeBombRace()
+		TriggerEvent("Notify","importante","A <b>Bomba</b> foi desarmada com sucesso.")
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -384,15 +401,3 @@ function CriandoBlip(races,racepoint,racepos)
 	AddTextComponentString("Corrida Clandestina")
 	EndTextCommandSetBlipName(blips)
 end
-
-RegisterNetEvent("emp_race:defuse")
-AddEventHandler("emp_race:defuse",function()
-	inrace = false
-	RemoveBlip(blips)
-	if explosive >= 40 then
-		explosive = 0
-		DetachEntity(bomba,false,false)
-		TriggerServerEvent("trydeleteobj",ObjToNet(bomba))
-		emP.removeBombRace()
-	end
-end)

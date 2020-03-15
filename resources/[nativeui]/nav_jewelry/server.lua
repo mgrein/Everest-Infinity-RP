@@ -9,7 +9,7 @@ local valores = {
 	{ item = "pulseiraroubada", venda = 1500 },
 	{ item = "anelroubado", venda = 2300 },
 	{ item = "colarroubado", venda = 3200 },
-	{ item = "orgao", venda = 435 },
+	{ item = "orgao", venda = 735 },
 	{ item = "brincoroubado", venda = 2100 },
 	{ item = "carteiraroubada", venda = 2100 },
 	{ item = "carregadorroubado", venda = 3100 },
