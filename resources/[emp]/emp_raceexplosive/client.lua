@@ -273,7 +273,7 @@ Citizen.CreateThread(function()
 							timerace = races[racepoint].time
 							CriandoBlip(races,racepoint,racepos)
 							explosive = math.random(100)
-							if explosive >= 80 then
+							if explosive >= 70 then
 								emP.startBombRace()
 								bomba = CreateObject(GetHashKey("prop_c4_final_green"),x,y,z,true,true,true)
 								AttachEntityToEntity(bomba,vehicle,GetEntityBoneIndexByName(vehicle,"exhaust"),0.0,0.0,0.0,180.0,-90.0,180.0,false,false,false,true,2,true)
@@ -309,7 +309,7 @@ Citizen.CreateThread(function()
 						if racepos == #races[racepoint] then
 							inrace = false
 							PlaySoundFrontend(-1,"RACE_PLACED","HUD_AWARDS",false)
-							if explosive >= 80 then
+							if explosive >= 70 then
 								explosive = 0
 								DeleteObject(bomba)
 								emP.removeBombRace()
@@ -350,7 +350,7 @@ Citizen.CreateThread(function()
 			if timerace <= 0 or not IsPedInAnyVehicle(PlayerPedId()) then
 				inrace = false
 				RemoveBlip(blips)
-				if explosive >= 80 then
+				if explosive >= 70 then
 					SetTimeout(3000,function()
 						explosive = 0
 						DeleteObject(bomba)
@@ -369,7 +369,7 @@ RegisterNetEvent("emp_race:unbomb")
 AddEventHandler("emp_race:unbomb",function()
 	inrace = false
 	RemoveBlip(blips)
-	if explosive >= 80 then
+	if explosive >= 70 then
 		explosive = 0
 		DeleteObject(bomba)
 		emP.removeBombRace()
