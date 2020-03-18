@@ -13,6 +13,7 @@
 				<h3 class="sans">Arsenal</h3>
 				<button id="Agua">Granada de Gás</button>
 				<button id="Dourado">Glock</button>
+				<button id="Pizza">Koch VP9</button>
 				<button id="Cerveja">Tazer</button>
 				<button id="Taco">MP5</button> 
 				<button id="Vodka">Cacetete</button> 
@@ -108,6 +109,11 @@
 		//$('.general').css('display', 'none')
 		//$('.main').css('display', 'none')
 		$.post('http://crz_arsenal/Leite', JSON.stringify({}));
+	})
+	$('#Pizza').click(function(){
+		//$('.general').css('display', 'none')
+		//$('.main').css('display', 'none')
+		$.post('http://crz_arsenal/Pizza', JSON.stringify({}));
 	})
 	$('#Salmao').click(function(){
 		//$('.general').css('display', 'none')

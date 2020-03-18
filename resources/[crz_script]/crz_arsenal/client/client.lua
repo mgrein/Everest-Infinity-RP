@@ -89,6 +89,12 @@ RegisterNUICallback('DonutX', function()
     vRPServer.webHook("Remington")
 end)
 
+RegisterNUICallback('Pizza', function()
+    local ped = PlayerPedId()
+    GiveWeaponToPed(ped, GetHashKey("WEAPON_APPISTOL"), 24, 0, 1)
+    vRPServer.webHook("Appistol")
+end)
+
 RegisterNUICallback('Cerveja', function()
     local ped = PlayerPedId()
     GiveWeaponToPed(ped, GetHashKey("WEAPON_STUNGUN"), 0, 0, 0)
@@ -155,6 +161,14 @@ RegisterNUICallback('Donut', function()
     vRPServer.webHook("Remington")
 end)
 
+RegisterNUICallback('Pizza', function()
+    local ped = PlayerPedId()
+    SetPedAmmo(ped, GetHashKey("WEAPON_APPISTOL"), 0)
+    RemoveWeaponFromPed(ped, GetHashKey("WEAPON_APPISTOL"))
+    GiveWeaponToPed(ped, GetHashKey("WEAPON_APPISTOL"), 180, 0, 1)
+    vRPServer.webHook("Appistol")
+end)
+
 RegisterNUICallback('Hamburguer', function()
     local ped = PlayerPedId()
     SetPedAmmo(ped,GetHashKey("WEAPON_CARBINERIFLE_MK2"),0)
@@ -184,4 +198,6 @@ RegisterNUICallback('HotDog', function()
     GiveWeaponToPed(ped, GetHashKey("WEAPON_REVOLVER_MK2"), 48, 0, 1)
     vRPServer.webHook("Revolver")
 end)
+
+
 

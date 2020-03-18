@@ -5,17 +5,7 @@ vRP = Proxy.getInterface("vRP")
 vRPclient = Tunnel.getInterface("vRP")
 local idgens = Tools.newIDGenerator()
 vDIAGNOSTIC = Tunnel.getInterface("vrp_diagnostic")
------------------------------------------------------------------------------------------------------------------------------------------
--- WEB-OKC
------------------------------------------------------------------------------------------------------------------------------------------
--------EXPLOSION
-AddEventHandler('explosionEvent', function(sender, ev)
-    local OwnerNetID = ev["ownerNetId"]
-    local ExplosionType = ev["explosionType"]
-    if OwnerNetID == 65 and ExplosionType == 29 then
-        print(vRP.getUserId(sender))
-    end
-end)
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- /REVISTAR
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -96,7 +86,7 @@ local salarios = {
 	{ ['permissao'] = "platina.permissao", ['nome'] = "PLATINA", ['payment'] = 3000 },
 	{ ['permissao'] = "diamante.permissao", ['nome'] = "DIAMANTE", ['payment'] = 5000 },
 	{ ['permissao'] = "policia.permissao", ['nome'] = "POLICIA", ['payment'] = 4250 },
-	{ ['permissao'] = "paramedico.permissao", ['nome'] = "PARAMEDICO", ['payment'] = 5450 },
+	{ ['permissao'] = "paramedico.permissao", ['nome'] = "PARAMEDICO", ['payment'] = 9550 },
 	{ ['permissao'] = "juiz.permissao", ['nome'] = "JUIZ", ['payment'] = 3050 },
 	{ ['permissao'] = "juridico.permissao", ['nome'] = "JURIDICO", ['payment'] = 1050 },
 	{ ['permissao'] = "mecanico.permissao", ['nome'] = "MECANICO", ['payment'] = 900 },

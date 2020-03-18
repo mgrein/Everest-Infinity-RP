@@ -427,6 +427,7 @@ Config.WeaponList = {
 	"weapon_stone_hatchet",
 	"weapon_pumpshotgun",
 	"WEAPON_CARBINERIFLE_MK2",
+	"WEAPON_APPISTOL"
 }
 
 local LastWeapon = nil

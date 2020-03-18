@@ -44,7 +44,6 @@ end
 -- BLACKLIST WEAPONS
 -----------------------------------------------------------------------------------------------------------------------------------------
 blackWeapons = {
-	"WEAPON_APPISTOL",
 	"WEAPON_PISTOL50",
 	"WEAPON_SNSPISTOL_MK2",
 	--"WEAPON_HEAVYPISTOL",

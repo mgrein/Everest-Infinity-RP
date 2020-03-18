@@ -40,7 +40,7 @@ Citizen.CreateThread(function()
 		end
 		SetDiscordAppId(633867412437073930)
 		SetDiscordRichPresenceAsset('logo_name')
-        SetRichPresence("Moradores : "..#players)
+        SetRichPresence("Moradores : "..#players.."| 99")
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------

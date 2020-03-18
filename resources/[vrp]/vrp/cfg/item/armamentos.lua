@@ -50,7 +50,8 @@ local nomes = {
 	Machinepistol = "Tec-9",
 	Stickybomb = "Explosivos C4",
 	Sniperrifle = "Sniper AWP",
-	Heavypistol = "Taurus 380"
+	Heavypistol = "Taurus 380",
+	Appistol = "Koch VP9"
 }
 
 local get_wname = function(weapon_id)

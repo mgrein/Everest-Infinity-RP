@@ -153,7 +153,7 @@ RegisterCommand("radiof", function(source, args)
         if parseInt(args[1]) >= 19 and parseInt(args[1]) <= 500 then
             exports.tokovoip_script:addPlayerToRadio(parseInt(args[1]))
             TriggerEvent("Notify", "sucesso",
-                         "Entrou no rádio da <b>frequência " ..
+                         "Conectou na <b>frequência " ..
                              tostring(args[1]) .. "</b>.", 8000)
         end
     end
