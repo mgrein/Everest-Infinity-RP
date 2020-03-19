@@ -191,14 +191,14 @@ function funcClient.carroPrisao(id, tempo)
         }
     
     local locaisPrisao = {
-        {name = "DP CENTRO", x=-1114.94, y=-824.28, z=19.32, x2=-1066.06,y2=-862.41,z2=4.87, h2=208.25848388672}, -- cidade
+        {name = "DP CENTRO", x=427.21,y=-979.37, z=30.70, x2=501.58,y2=-1020.194,z2=28.10, h2=356.56}, -- cidade
         {name = "DP MEIO", x=1853.86, y=3686.01, z=34.27, x2=1861.75, y2=3706.97, z2=33.35, h2=29.05},
         {name = "DP PALETO", x=-446.65, y=6012.58, z=31.72, x2=-449.27, y2=6052.75, z2=31.34, h2=213.27},
         {name = "PRISAO", x=1812.96, y=2604.84, z=45.57}
     }
 
 	if HasModelLoaded(vhash) then
-        -- nveh = CreateVehicle(vhash,1877.59,2625.8,45.67, 356.74,true,false)
+        --nveh = CreateVehicle(vhash,1877.59,2625.8,45.67, 356.74,true,false)
         local menorDistancia = nil
         local coordenadasSaida = nil
         for i, loc in pairs(locaisPrisao) do

@@ -757,6 +757,29 @@
 			<sirenSettings value="0" />
 		</Item>
 		<Item>
+			<modelName>p1</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">0 0 4 0 0 0</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>1027_p1_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1027" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
 			<modelName>19ramdonk</modelName>
 			<colors>
 				<Item>
@@ -1076,6 +1099,29 @@
 				</Probabilities>
 			</plateProbabilities>
 			<lightSettings value="1040" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>SENNA</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">0 0 4 0 0 0</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>1041_SENNA_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1041" />
 			<sirenSettings value="0" />
 		</Item>
 		<Item>

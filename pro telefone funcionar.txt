@@ -1,6 +1,6 @@
 Executar no powershell em modo admin e colar no console:
 
-cd C:\fivem\everest\server-data
+cd C:\server\server-data
 $env:USERS = "user=password everest=123123"
 $env:REALM = "177.54.152.200"
 $env:UDP_PORT = 3478

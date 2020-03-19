@@ -58,6 +58,21 @@ RegisterCommand('addcar',function(source,args,rawCommand)
     end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
+-- KICKAALL
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand('kickall',function(source,args,rawCommand)
+    local user_id = vRP.getUserId(source)
+    if vRP.hasPermission(user_id,"admin.permissao") or vRP.hasPermission(user_id,"suporte.permissao") or vRP.hasPermission(user_id,"mod.permissao") then
+        local users = vRP.getUsers()
+        for k,v in pairs(users) do
+            local id = vRP.getUserSource(parseInt(k))
+            if id then
+                vRP.kick(id,"Você foi vitima do Terremoto. (Server Reiniciando Equipe STAFF EVERESTRP)")
+            end
+        end
+    end
+end)
+-----------------------------------------------------------------------------------------------------------------------------------------
 -- REM CAR
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterCommand('remcar',function(source,args,rawCommand)
